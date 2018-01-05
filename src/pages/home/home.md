@@ -11,18 +11,6 @@ description: >-
   anyone.
 intro:
   goodies:
-    - image: /img/big_ledger.svg
-      path: /projects/big-ledger
-    - image: /img/pip.svg
-      path: /projects/pip
-    - image: /img/home_energy_app.svg
-      path: /projects/home-energy-app
-    - image: /img/office.svg
-      path: /projects/office-quiz
-    - image: /img/nerd.svg
-      path: /projects/personal-site
-    - image: /img/pre_course.svg
-      path: /projects/pre-course-tracker
     - image: /img/bike.svg
       path: /projects/etsy-bike
     - image: /img/cold.svg
@@ -31,6 +19,12 @@ intro:
       path: /projects/memory-game
     - image: /img/ncaa.svg
       path: /projects/ncaa-quiz
+    - image: /img/nerd.svg
+      path: /projects/personal-site
+    - image: /img/office.svg
+      path: /projects/office-quiz
+    - image: /img/pre_course.svg
+      path: /projects/pre-course-tracker
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their

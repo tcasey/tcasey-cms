@@ -6,7 +6,7 @@ import Testimonials from 'site/components/Testimonials'
 import Pricing from 'site/components/Pricing'
 
 import { AboutPageTemplate } from 'site/templates/about-page'
-import { ProductPageTemplate } from 'site/templates/projects-page'
+import { ProjectPageTemplate } from 'site/templates/projects-page'
 import { BlogPostTemplate } from 'site/templates/blog-post'
 
 const AboutPagePreview = ({ entry, widgetFor }) => (
@@ -24,21 +24,21 @@ const BlogPostPreview = ({ entry, widgetFor }) => (
   />
 )
 
-const ProductPagePreview = ({ entry, widgetFor, getAsset }) => {
+const ProjectPagePreview = ({ entry, widgetFor, getAsset }) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'goodies'])
   const goodies = entryBlurbs ? entryBlurbs.toJS() : []
 
-  const entryTestimonials = entry.getIn(['data', 'testimonials'])
-  const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
+  // const entryTestimonials = entry.getIn(['data', 'testimonials'])
+  // const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
 
-  const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
-  const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
+  // const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
+  // const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
 
   return (
-    <ProductPageTemplate
+    <ProjectPageTemplate
       image={entry.getIn(['data', 'image'])}
       title={entry.getIn(['data', 'title'])}
-      heading={entry.getIn(['data', 'heading'])}
+      // heading={entry.getIn(['data', 'heading'])}
       description={entry.getIn(['data', 'description'])}
       intro={{ goodies }}
       main={{
@@ -57,18 +57,18 @@ const ProductPagePreview = ({ entry, widgetFor, getAsset }) => {
           alt: entry.getIn(['data', 'main', 'image3', 'alt']),
         },
       }}
-      fullImage={entry.getIn(['data', 'full_image'])}
-      testimonials={testimonials}
-      pricing={{
-        heading: entry.getIn(['data', 'pricing', 'heading']),
-        description: entry.getIn(['data', 'pricing', 'description']),
-        plans: pricingPlans,
-      }}
+      // fullImage={entry.getIn(['data', 'full_image'])}
+      // testimonials={testimonials}
+      // pricing={{
+      //   heading: entry.getIn(['data', 'pricing', 'heading']),
+      //   description: entry.getIn(['data', 'pricing', 'description']),
+      //   plans: pricingPlans,
+      // }}
     />
   )
 }
 
 CMS.registerPreviewStyle('/styles.css')
-CMS.registerPreviewTemplate('about', AboutPagePreview)
-CMS.registerPreviewTemplate('products', ProductPagePreview)
+CMS.registerPreviewTemplate('bio', AboutPagePreview)
+CMS.registerPreviewTemplate('projects', ProjectPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)

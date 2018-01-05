@@ -15,7 +15,7 @@ export const BlogPostTemplate = ({
       {helmet ? helmet : ''}
       <div className="container content">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
+          <div className="column">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>

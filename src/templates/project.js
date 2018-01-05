@@ -9,7 +9,7 @@ export const ProjectTemplate = ({
   title,
   helmet,
 }) => {
-  const PostContent = contentComponent || Content
+  const ProjectContent = contentComponent || Content
   return (
     <section className="section">
       {helmet ? helmet : ''}
@@ -18,7 +18,7 @@ export const ProjectTemplate = ({
         <div className="columns">
           <div className="column">
             <p>{description}</p>
-            <PostContent content={content} />
+            <ProjectContent content={content} />
           </div>
         </div>
       </div>
