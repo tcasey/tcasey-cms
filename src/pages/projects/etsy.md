@@ -3,7 +3,7 @@ templateKey: project
 path: /projects/etsy-bike
 title: All About Road Bikes
 date: 2016-12-17T15:04:10.000Z
-description: One year I planned ahead for Christmas & made a website to help answer the "What do you want for Christmas?" questions
+description: A couple of years ago I planned ahead for Christmas & made a website to help answer the "What do you want for Christmas?" questions
 ---
 
 ![about](/img/etsy-bike/etsy-bike-about.png)

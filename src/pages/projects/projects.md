@@ -5,10 +5,7 @@ title: Projects
 image: /img/jumbotron.jpg
 heading:
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  yada yada yada
 intro:
   goodies:
     - image: /img/big_ledger.svg
@@ -25,18 +22,15 @@ intro:
       path: /projects/pre-course-tracker
     - image: /img/bike.svg
       path: /projects/etsy-bike
-    - image: /img/cold.svg
-      path: /projects/hot-cold-game
     - image: /img/memory.svg
       path: /projects/memory-game
+    - image: /img/cold.svg
+      path: /projects/hot-cold-game
     - image: /img/ncaa.svg
       path: /projects/ncaa-quiz
   heading: What we offer
   description: >
-    Kaldi is the ultimate spot for coffee lovers who want to learn about their
-    java’s origin and support the farmers that grew it. We take coffee
-    production, roasting and brewing seriously and we’re glad to pass that
-    knowledge to anyone. This is an edit via identity...
+    Intro description yada yada yada
 main:
   heading: Great coffee with no compromises
   description: >
@@ -54,14 +48,15 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 testimonials:
-  - author: Elisabeth Kaurismäki
+  - author: Jeremy Fagergren
     quote: >-
-      The first time I tried Kaldi’s coffee, I couldn’t even believe that was
-      the same thing I’ve been drinking every morning.
-  - author: Philipp Trommler
+      It was an incredible experience working with Trevor. He just "got it". Rarely would I have to do much explanation or justification of different UX/UI requirements. He quickly understood the concepts and the bigger picture reasons. He even would offer insightful suggestions that others might not have thought of. He was wicked fast to get up to speed on our systems and code base, finding fixes and solutions that had been baffling other seasoned developers within his first week. Any team would be lucky to have Trevor in their midst.
+  - author: James Lemire
     quote: >-
-      Kaldi is the place to go if you want the best quality coffee. I love their
-      stance on empowering farmers and transparency.
+      Trevor is a very gifted developer. He was a great co-worker, friend, and mentor in the time we spent together at Convirza. Since my first day on the job, he helped me get up to speed rapidly and I could always rely on him to bounce ideas off of. When working together nothing stood in our way and we were very efficient as a team. I'd highly recommend Trevor for any team as he is a strong asset and has a good personality fit.
+  - author: Josh Barber
+    quote: >-
+      I was so excited to work with Trevor at DevMountain after seeing some of his previous projects. He is incredibly skilled at all aspects of the MEAN Stack. Not only is his functionality extremely clean and consistent, but his eye for design and creativity is incredible. With his leadership ,we were able to create an incredible app that I feel will be very valuable to DevMountain and their ability to produce top notch students.
 full_image: /img/products-full-width.jpg
 pricing:
   heading: Monthly subscriptions
