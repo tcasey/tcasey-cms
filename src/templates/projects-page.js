@@ -1,5 +1,5 @@
 import React from 'react'
-import Hex from '../components/Hex'
+import Projects from '../components/Projects'
 import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
 
@@ -18,7 +18,7 @@ export const ProjectPageTemplate = ({
           <h1 className="has-text-weight-bold is-size-2">{title}</h1>
         </div>
         <div className="content">
-          <Hex gridItems={intro.goodies} />
+          <Projects gridItems={intro.goodies} />
         </div>
       </div>
     </section>
@@ -50,6 +50,9 @@ export const projectPageQuery = graphql`
         intro {
           goodies {
             image
+            title
+            year
+            role
             path
           }
           heading

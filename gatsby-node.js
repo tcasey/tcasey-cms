@@ -21,6 +21,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               intro {
                 goodies {
                   image
+                  title
+                  year
+                  role
                   path
                 }
                 heading

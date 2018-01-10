@@ -2,20 +2,29 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const ProjectGrid = ({ gridItems }) => (
-  <ul className="hex-grid">
+  <div className="projects">
     {gridItems.map(item => (
-      <li className="hex">
-        {/* individual hexagon 'items' */}
-        <div className="hex-in">
-          <Link to={item.path}>
-            <div className="hex-content">
-              <img src={item.image} />
-            </div>
-          </Link>
+      <Link
+        to={item.path}
+        key={item.path}
+      >
+        <div
+          className="content"
+          style={{ border: '1px solid #eaecee', padding: '2em 4em', margin: '2em 0 2em 0' }}
+        >
+          <h3>
+            {item.title || 'project'}
+          </h3>
+            <p>{item.role || 'All the Things'}</p>
+            <p>Produced in {item.year || 'NaN'}.</p>
+          <div className="projects-image-container">
+            <div>→</div>
+            <img className="projects-image" src={item.image} />
+          </div>
         </div>
-      </li>
-    ))}
-  </ul>
+        </Link>
+     ))}
+  </div>
 )
 
 export default ProjectGrid

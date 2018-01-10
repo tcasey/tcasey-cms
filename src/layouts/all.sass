@@ -34,4 +34,27 @@ $footer-background-color: $tcasey-gray
 .margin-top-0
   margin-top: 0 !important
 
+.projects-image-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-direction: row
+
+.projects-image
+  width: 120px
+
+body::-webkit-scrollbar
+  width: 8px
+body::-webkit-scrollbar, ::-webkit-scrollbar-track
+  background: transparent
+body::-webkit-scrollbar
+  overflow: visible
+body::-webkit-scrollbar-thumb
+  background-color: $tcasey-blue
+
+.projects .content:hover
+    background-color: $tcasey-blue
+    box-shadow: 0 25px 35px rgba(0,0,255,.2)
+    -webkit-transition: background .28s 0s
+
 @import "~bulma"

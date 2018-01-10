@@ -9,26 +9,56 @@ description: >-
 intro:
   goodies:
     - image: /img/big_ledger.svg
+      title: Big Ledger
+      year: 2017
+      role: Development / Design
       path: /projects/big-ledger
     - image: /img/pip.svg
+      title: Pay With Pip
+      year: 2017
+      role: Development / Design
       path: /projects/pip
     - image: /img/home_energy_app.svg
+      title: Home Energy App
+      year: 2017
+      role: Development
       path: /projects/home-energy-app
     - image: /img/office.svg
+      title: Office Quiz
+      year: 2016
+      role: Development / Design
       path: /projects/office-quiz
     - image: /img/nerd.svg
+      title: Portfolio Site
+      year: 2016
+      role: Development / Design
       path: /projects/personal-site
     - image: /img/pre_course.svg
+      title: Pre Course Tracker
+      year: 2016
+      role: Development / Design
       path: /projects/pre-course-tracker
     - image: /img/bike.svg
+      title: All About Road Bikes
+      year: 2015
+      role: Development / Design
       path: /projects/etsy-bike
     - image: /img/memory.svg
+      title: Memory Game
+      year: 2015
+      role: Development / Design
       path: /projects/memory-game
     - image: /img/cold.svg
+      title: Hot & Cold Game
+      year: 2015
+      role: Development / Design
       path: /projects/hot-cold-game
     - image: /img/ncaa.svg
+      title: NCAA Quiz
+      year: 2015
+      role: Development / Design
       path: /projects/ncaa-quiz
-  heading: What we offer
+  heading: Portfolio Pieces
   description: >
     Intro description yada yada yada
 main:
