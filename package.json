@@ -32,6 +32,7 @@
     "build:site": "gatsby build",
     "build:cms": "cd cms && yarn && npm run build",
     "develop": "gatsby develop",
+    "functions": "netlify-lambda serve functions/",
     "serve": "gatsby serve",
     "_format": "prettier --trailing-comma es5 --no-semi --single-quote --write",
     "format": "npm run format:src & npm run format:cms",
