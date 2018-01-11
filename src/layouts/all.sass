@@ -1,5 +1,7 @@
 @import "~bulma/sass/utilities/initial-variables"
 @import "./hex.scss"
+@import "./svg.scss"
+@import "./base64.scss"
 
 // Config
 $tcasey-blue: #0575E6
@@ -34,14 +36,8 @@ $footer-background-color: $tcasey-gray
 .margin-top-0
   margin-top: 0 !important
 
-.projects-image-container
-  display: flex
-  justify-content: space-between
-  align-items: center
-  flex-direction: row
-
-.projects-image
-  width: 120px
+.section
+  min-height: 80vh
 
 body::-webkit-scrollbar
   width: 8px
@@ -52,9 +48,45 @@ body::-webkit-scrollbar
 body::-webkit-scrollbar-thumb
   background-color: $tcasey-blue
 
+.projects-image-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-direction: row
+
+.projects-image
+  width: 120px
+
+.projects .content h3,
+.projects article a p,
+    transition: color .3s ease-in-out
+    will-change: color
+
 .projects .content:hover
+    color: $tcasey-blue-invert
     background-color: $tcasey-blue
     box-shadow: 0 25px 35px rgba(0,0,255,.2)
-    -webkit-transition: background .28s 0s
+    transition: background .28s 0s;
+    -o-transition: background .28s 0s;
+    -moz-transition: background .28s 0s;
+    -webkit-transition: background .28s 0s;
 
+.projects .content:hover h3
+    color: $tcasey-blue-invert
+
+.project-text
+    top: 0
+    left: 0
+    position: absolute
+    display: block
+    vertical-align: top
+    width: auto
+    padding: 2em
+    transition: all .3s ease-in-out
+    will-change: left,top
+    z-index: 1
+    float: left
+.projects .content:hover .project-text
+    top: 25px
+    left: 30px
 @import "~bulma"
