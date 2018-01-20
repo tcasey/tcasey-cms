@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "tcasey",
   "dependencies": {
+    "axios": "^0.17.1",
     "bulma": "^0.6.0",
     "gatsby": "^1.9.63",
     "gatsby-link": "^1.6.21",
@@ -18,22 +19,16 @@
     "react-load-script": "0.0.6",
     "react-svg": "^2.2.9"
   },
-  "keywords": [
-    "gatsby",
-    "netlify",
-    "cms",
-    "javascript",
-    "react",
-    "graphql"
-  ],
+  "keywords": ["gatsby", "netlify", "cms", "javascript", "react", "graphql"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "npm run build:cms && npm run build:site",
+    "build": "npm run build:cms && npm run build:site && npm run build:lambda",
     "build:site": "gatsby build",
     "build:cms": "cd cms && yarn && npm run build",
-    "develop": "gatsby develop",
-    "functions": "netlify-lambda serve functions/",
+    "build:lambda": "netlify-lambda build src/lambdas/",
+    "start": "gatsby develop",
+    "start:lambda": "netlify-lambda serve src/lambdas/",
     "serve": "gatsby serve",
     "_format": "prettier --trailing-comma es5 --no-semi --single-quote --write",
     "format": "npm run format:src & npm run format:cms",
@@ -43,5 +38,13 @@
   },
   "devDependencies": {
     "prettier": "^1.7.4"
+  },
+  "proxy": {
+    "/.netlify/functions": {
+      "target": "http://localhost:9000",
+      "pathRewrite": {
+        "^/\\.netlify/functions": ""
+      }
+    }
   }
 }
