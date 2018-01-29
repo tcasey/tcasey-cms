@@ -1,18 +1,18 @@
-import React from 'react'
-import Content, { HTMLContent } from '../components/Content'
-import Helmet from 'react-helmet'
+import React from "react";
+import Content, { HTMLContent } from "../components/Content";
+import Helmet from "react-helmet";
 
 export const ProjectTemplate = ({
   content,
   contentComponent,
   description,
   title,
-  helmet,
+  helmet
 }) => {
-  const ProjectContent = contentComponent || Content
+  const ProjectContent = contentComponent || Content;
   return (
-    <section className="section">
-      {helmet ? helmet : ''}
+    <section className="section is-medium">
+      {helmet ? helmet : ""}
       <div className="container content">
         <h1 className="has-text-weight-bold is-size-2">{title}</h1>
         <div className="columns">
@@ -23,11 +23,11 @@ export const ProjectTemplate = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
   return (
     <ProjectTemplate
       content={post.html}
@@ -36,8 +36,8 @@ export default ({ data }) => {
       helmet={<Helmet title={`Project | ${post.frontmatter.title}`} />}
       title={post.frontmatter.title}
     />
-  )
-}
+  );
+};
 
 export const projectQuery = graphql`
   query ProjectByPath($path: String!) {
@@ -51,4 +51,4 @@ export const projectQuery = graphql`
       }
     }
   }
-`
+`;

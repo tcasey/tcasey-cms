@@ -1,7 +1,7 @@
 import React from "react";
 
 const NotFoundPage = () => (
-  <section className="section section--gradient">
+  <section className="section is-medium section--gradient">
     <div className="container content">
       <h1 className="has-text-weight-bold is-size-2">NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>

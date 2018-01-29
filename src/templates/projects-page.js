@@ -1,7 +1,7 @@
-import React from 'react'
-import Projects from '../components/Projects'
-import Testimonials from '../components/Testimonials'
-import Pricing from '../components/Pricing'
+import React from "react";
+import Projects from "../components/Projects";
+import Testimonials from "../components/Testimonials";
+import Pricing from "../components/Pricing";
 
 export const ProjectPageTemplate = ({
   image,
@@ -9,10 +9,10 @@ export const ProjectPageTemplate = ({
   description,
   intro,
   main,
-  testimonials,
+  testimonials
 }) => {
   return (
-    <section className="section section--gradient">
+    <section className="section section--gradient is-medium">
       <div className="container">
         <div className="content">
           <h1 className="has-text-weight-bold is-size-2">{title}</h1>
@@ -22,11 +22,11 @@ export const ProjectPageTemplate = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
   return (
     <ProjectPageTemplate
       image={frontmatter.image}
@@ -36,8 +36,8 @@ export default ({ data }) => {
       main={frontmatter.main}
       testimonials={frontmatter.testimonials}
     />
-  )
-}
+  );
+};
 
 export const projectPageQuery = graphql`
   query ProjectPage($path: String!) {
@@ -61,4 +61,4 @@ export const projectPageQuery = graphql`
       }
     }
   }
-`
+`;
