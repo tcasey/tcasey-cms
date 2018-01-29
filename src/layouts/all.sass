@@ -64,6 +64,7 @@ body::-webkit-scrollbar-thumb
 .projects .content:hover
     color: $tcasey-blue-invert
     background-color: $tcasey-blue
+    border: 0 !important
     box-shadow: 0 25px 35px rgba(0,0,255,.2)
     transition: background .28s 0s;
     -o-transition: background .28s 0s;
@@ -85,7 +86,14 @@ body::-webkit-scrollbar-thumb
     will-change: left,top
     z-index: 1
     float: left
+    color: black
 .projects .content:hover .project-text
+    color: $tcasey-blue-invert
     top: 25px
     left: 30px
+
+.footer
+  width: 100vw
+.navbar
+  width: 100vw
 @import "~bulma"

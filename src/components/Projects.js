@@ -17,21 +17,32 @@ const ProjectGrid = ({ gridItems }) => (
             }}
           >
             <div className="project-text">
-              <h3>{item.title || "project"}</h3>
-              <p>{item.role || "All the Things"}</p>
-              <p>Produced in {item.year || "NaN"}.</p>
+              <div style={{ fontSize: "x-large" }}>
+                {item.title || "project"}
+              </div>
+              <div>{item.role || "All the Things"}</div>
+              <div>Produced in {item.year || "NaN"}.</div>
             </div>
             <div
-            style={{
-              height: "100px",
-              width: "100%"
-            }}
-            >
-            </div>
+              style={{
+                height: "100px",
+                width: "100%"
+              }}
+            />
             <div className="projects-image-container">
-              <svg className="icon-big-arrow-right" width="50px" height="20px" viewBox="0 0 29.3 5.8" enableBackground="new 0 0 29.3 5.8">
-                <path className="st0" fill="#fff" d="M25.8 0l-.6.8 1.9 1.6h-27.1v1h27.1l-1.9 1.6.6.8 3.5-2.9z"></path>
-                </svg>
+              <svg
+                className="icon-big-arrow-right"
+                width="50px"
+                height="20px"
+                viewBox="0 0 29.3 5.8"
+                enableBackground="new 0 0 29.3 5.8"
+              >
+                <path
+                  className="st0"
+                  fill="#fff"
+                  d="M25.8 0l-.6.8 1.9 1.6h-27.1v1h27.1l-1.9 1.6.6.8 3.5-2.9z"
+                />
+              </svg>
               <ReactSVG
                 path={item.image}
                 className="projects-svg"
