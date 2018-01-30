@@ -3,6 +3,7 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import Script from "react-load-script";
 import Group from "../components/Group";
+import ProjectGrid from "../components/Projects";
 
 export const HomePageTemplate = ({
   image,
@@ -12,11 +13,13 @@ export const HomePageTemplate = ({
   main,
   testimonials
 }) => {
+  const data = intro.goodies.filter((i, index) => index < 2);
+
   return (
-    <section className="section section--gradient">
+    <section className="home">
       <div className="container">
         <div className="content">
-          <Group gridItems={intro.goodies} />
+          <ProjectGrid gridItems={data} small />
         </div>
       </div>
     </section>
@@ -82,6 +85,9 @@ export const homePageQuery = graphql`
         intro {
           goodies {
             image
+            title
+            year
+            role
             path
           }
           heading
