@@ -54,7 +54,6 @@ export const projectPageQuery = graphql`
             year
             role
             path
-            description
           }
           heading
           description
