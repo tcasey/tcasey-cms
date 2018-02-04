@@ -4,6 +4,7 @@ import Helmet from "react-helmet";
 import Script from "react-load-script";
 import Group from "../components/Group";
 import ProjectGrid from "../components/Projects";
+import Hero from "../components/Hero";
 
 export const HomePageTemplate = ({
   image,
@@ -29,6 +30,13 @@ export const HomePageTemplate = ({
 export default class IndexPage extends Component {
   constructor(props) {
     super(props);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.state = {
+      scrollY: 0
+    };
+  }
+  handleScroll(e) {
+    this.setState({ scrollY: e.currentTarget.scrollY });
   }
   handleScriptLoad() {
     if (window.netlifyIdentity) {
@@ -42,14 +50,21 @@ export default class IndexPage extends Component {
     }
     window.netlifyIdentity.init();
   }
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
 
   render() {
     const { frontmatter } = this.props.data.markdownRemark;
-    console.log(frontmatter);
+    const { scrollY } = this.state;
     return (
-      <section className="section">
+      <section>
+        <Hero scrollY={scrollY} />
         <div className="container content">
-          <div className="columns">
+          <div className="columns section is-mobile">
             <div className="column">
               <h2 className="title is-size-2 has-text-weight-bold is-bold-light">
                 Some of my Latest Work

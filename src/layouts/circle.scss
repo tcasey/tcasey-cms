@@ -1,0 +1,225 @@
+.home-header {
+  position: relative;
+  background-color: #f6f6f6;
+}
+.hero-container {
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.home-header:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #f6f6f6;
+  transition: 0.75s;
+}
+
+.hero-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.loaded .hero-circles .circle-1 {
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
+  transition: 0.75s 1s;
+}
+@media screen and (max-width: 1023px) and (min-width: 480px) {
+  .hero-circles .circle-1 {
+    top: -40vw;
+    left: -15vw;
+    width: 110%;
+  }
+}
+
+@media screen and (max-width: 480px) and (min-width: 1px) {
+  .hero-circles .circle-1 {
+    top: -20%;
+    left: -15vw;
+    width: 100vh;
+    left: -50%;
+  }
+}
+
+.circle-1 {
+  width: 80vw;
+  position: absolute;
+  top: -30vw;
+  left: -10vw;
+  z-index: 2;
+  // -webkit-transform: translate(-20%, -20%);
+  // transform: translate(-20%, -20%);
+  // opacity: 0;
+  // transition: 0.75s;
+}
+.hero-circles .circle-1 div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #edac01;
+  border-radius: 50%;
+  // transition: 0.1s;
+}
+.hero-circles .circle-1:after,
+.hero-circles .circle-2:after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.loaded .hero-circles .circle-2 {
+  -webkit-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  opacity: 1;
+  // transition: 0.75s 1.25s;
+}
+
+@media screen and (max-width: 1023px) and (min-width: 480px) {
+  .hero-circles .circle-2 {
+    width: 60%;
+    right: -30vw;
+    top: -30vw;
+    z-index: 3;
+  }
+}
+
+.circle-2 {
+  border-radius: 50%;
+  width: 61vw;
+  position: absolute;
+  right: -15vw;
+  top: -35vw;
+  // -webkit-transform: translate(20%, 20%);
+  // transform: translate(20%, 20%);
+  // opacity: 0;
+  // transition: 0.75s;
+  z-index: 2;
+}
+
+.hero-circles .circle-2 div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #001eff;
+  border-radius: 50%;
+  // transition: 0.1s;
+}
+
+.home-header .hero-container .container {
+  position: relative;
+  z-index: 3;
+}
+.home-header .hero-container .container h1 {
+  color: white;
+}
+@media (min-width: 1200px) {
+  .home-header .container {
+    width: 1170px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .home-header .container {
+    max-width: 960px;
+    width: 960px;
+  }
+}
+
+@media (min-width: 992px) {
+  .home-header .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-header .container {
+    width: 750px;
+  }
+}
+.home-header .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  // display: flex;
+}
+.loaded .home-header h1 span:nth-of-type(1) {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+  transition: 0.75s 1.5s;
+}
+.loaded .home-header h1 span:nth-of-type(2) {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  opacity: 1;
+  transition: 0.75s 1.75s;
+}
+.home-header h1 span {
+  display: block;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+  // opacity: 0;
+  transition: 0.75s;
+}
+.home-header h1 {
+  font-size: 60px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  color: #ffffff;
+  margin: 0 auto;
+  width: 100%;
+}
+.db-icon {
+  padding-top: 50vh;
+  padding-bottom: 100px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin-top: -10vh;
+}
+.loaded .db-icon .circle-wrapper {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.db-icon .circle-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(20%);
+  transform: translateY(20%);
+  transition: 0.75s;
+  height: 100px;
+}
+.db-icon .circle {
+  position: absolute;
+  top: 0%;
+  left: -15%;
+  width: 130%;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0s;
+}
+
+.db-icon .circle:after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}

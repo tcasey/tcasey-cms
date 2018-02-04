@@ -2,44 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import NavBar from "../components/NavBar";
 import mail from "../img/mail.svg";
 import twitter from "../img/twitter.svg";
 import linkedin from "../img/linkedin.svg";
 import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
-import Menu from "../components/Menu";
 import "./all.sass";
-
-// has-shadow
-const Navbar = () => (
-  <nav className="navbar is-transparent">
-    <div className="navbar-brand">
-      <Link to="/" className="navbar-item">
-        <figure className="image">
-          <img
-            src={logo}
-            alt="tcasey"
-            style={{ width: "88px", maxHeight: "3rem" }}
-          />
-        </figure>
-      </Link>
-    </div>
-    <div className="navbar-menu">
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/bio">
-          bio
-        </Link>
-        <Link className="navbar-item" to="/projects">
-          projects
-        </Link>
-        <Link className="navbar-item" to="/blog">
-          blog
-        </Link>
-      </div>
-    </div>
-    <Menu />
-  </nav>
-);
 
 const Footer = () => (
   <footer>
@@ -81,13 +50,13 @@ const Footer = () => (
         <div className="column is-hidden-tablet-only is-hidden-desktop-only is-two-fifth-widescreen is-one-quarter-fullhd footer-nav-wrapper">
           <ul className="footer-navbar-nav">
             <li>
-              <Link to="/projects/">Projects</Link>
+              <Link to="/projects/">projects</Link>
             </li>
             <li>
-              <Link to="/bio/">Bio</Link>
+              <Link to="/bio/">bio</Link>
             </li>
             <li>
-              <Link to="/blog/">Blog</Link>
+              <Link to="/blog/">blog</Link>
             </li>
           </ul>
         </div>
@@ -96,9 +65,6 @@ const Footer = () => (
         </div>
         <div className="column is-two-fifth-widescreen is-one-quarter-fullhd copyright">
           <div className="footer-social-icons">
-            {/* <a className="social" href="mailto:hello@tcasey.me">
-              <img src={mail} alt="email" style={{ width: "32px" }} />
-            </a> */}
             <a className="social" href="https://twitter.com/_tcasey_">
               <img src={twitter} alt="twitter" style={{ width: "32px" }} />
             </a>
@@ -121,8 +87,8 @@ const Footer = () => (
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Trevor Casey | JavaScript Developer" />
-    <Navbar />
-    <div>{children()}</div>
+    <NavBar />
+    <main style={{ width: "100vw" }}>{children()}</main>
     <Footer />
   </div>
 );
