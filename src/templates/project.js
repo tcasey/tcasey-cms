@@ -11,7 +11,7 @@ export const ProjectTemplate = ({
 }) => {
   const ProjectContent = contentComponent || Content;
   return (
-    <section className="section is-medium">
+    <section className="section">
       {helmet ? helmet : ""}
       <div className="container content">
         <h1 className="has-text-weight-bold is-size-2">{title}</h1>

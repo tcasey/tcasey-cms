@@ -4,7 +4,7 @@ import Content, { HTMLContent } from "../components/Content";
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
   return (
-    <section className="section is-medium section--gradient">
+    <section className="section section--gradient">
       <div className="container">
         <div className="content">
           <h1 className="has-text-weight-bold is-size-2">{title}</h1>

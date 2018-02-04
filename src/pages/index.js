@@ -47,7 +47,7 @@ export default class IndexPage extends Component {
     const { frontmatter } = this.props.data.markdownRemark;
     console.log(frontmatter);
     return (
-      <section className="section is-medium">
+      <section className="section">
         <div className="container content">
           <div className="columns">
             <div className="column">

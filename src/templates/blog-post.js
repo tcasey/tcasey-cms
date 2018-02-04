@@ -1,18 +1,18 @@
-import React from 'react'
-import Content, { HTMLContent } from '../components/Content'
-import Helmet from 'react-helmet'
+import React from "react";
+import Content, { HTMLContent } from "../components/Content";
+import Helmet from "react-helmet";
 
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
   title,
-  helmet,
+  helmet
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
   return (
-    <section className="section is-medium">
-      {helmet ? helmet : ''}
+    <section className="section">
+      {helmet ? helmet : ""}
       <div className="container content">
         <div className="columns">
           <div className="column">
@@ -25,11 +25,11 @@ export const BlogPostTemplate = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
   return (
     <BlogPostTemplate
       content={post.html}
@@ -38,8 +38,8 @@ export default ({ data }) => {
       helmet={<Helmet title={`Blog | ${post.frontmatter.title}`} />}
       title={post.frontmatter.title}
     />
-  )
-}
+  );
+};
 
 export const blogPageQuery = graphql`
   query BlogPostByPath($path: String!) {
@@ -53,4 +53,4 @@ export const blogPageQuery = graphql`
       }
     }
   }
-`
+`;

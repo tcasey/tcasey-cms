@@ -8,6 +8,11 @@ description: >-
   yada yada yada
 intro:
   goodies:
+    - image: /img/bit_bounti.svg
+      title: BitBounti
+      year: 2018
+      role: Development
+      path: /projects/bit-bounti
     - image: /img/big_ledger.svg
       title: Big Ledger
       year: 2017
