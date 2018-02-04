@@ -83,9 +83,9 @@ footer .row {
   color: #fff;
 }
 
-.footer-navbar-nav a:hover {
-  border-bottom: 1px solid #0088ff;
-}
+// .footer-navbar-nav a:hover {
+//   border-bottom: 1px solid #0088ff;
+// }
 
 .footer-rectangle a:hover,
 .footer-rectangle a:active,
@@ -107,20 +107,14 @@ footer .row {
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-  .container {
+  footer .container {
     max-width: 800px;
     width: 800px;
   }
 }
 
-.container {
+footer .container {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -165,9 +159,6 @@ footer .row {
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 }
 
 @media screen and (max-width: 1200px) {
@@ -176,19 +167,13 @@ footer .row {
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .copyright {
-    margin: 110px 0px 30px 0px !important;
+@media screen and (min-width: 1082px) {
+  footer .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
-
-// @media screen and (min-width: 1082px) {
-//   footer .copyright {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-// }
 
 .footer-social-icons {
   display: inline;
@@ -250,6 +235,23 @@ a {
 .footer-rectangle .info a:hover:after {
   width: 100%;
 }
+.footer-navbar-nav li {
+  position: relative;
+}
+
+.footer-navbar-nav a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 1px solid #edac01;
+  transition: 0.4s;
+}
+
+.footer-navbar-nav a:hover:after {
+  width: 100%;
+}
 
 :after,
 :before {
@@ -282,6 +284,11 @@ footer .footer-bottom .row .footer-logo-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  font-size: 20px;
+}
+
+.footer-navbar-nav .column {
+  text-align: center;
 }
 @media screen and (max-width: 1200px) and (min-width: 992px) {
   footer {
@@ -303,10 +310,7 @@ footer .footer-bottom .row .footer-logo-wrapper {
 
 @media screen and (max-width: 768px) {
   .footer-rectangle {
-    // height: auto;
     text-align: center;
-    // padding: 100px 0;
-    // padding-bottom: 50px;
   }
 }
 

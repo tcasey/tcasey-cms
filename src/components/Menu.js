@@ -3,16 +3,15 @@ import React, { Component } from "react";
 export default class Menu extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      active: false
-    };
     this.toggleState = this.toggleState.bind(this);
   }
   toggleState() {
-    this.setState({ active: !this.state.active });
+    this.props.toggleMenu();
   }
   render() {
-    if (this.state.active) {
+    const { menu } = this.props;
+
+    if (menu) {
       return (
         <div
           className="is-active mobile-menu navbar-burger"
