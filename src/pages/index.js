@@ -14,7 +14,7 @@ export const HomePageTemplate = ({
   main,
   testimonials
 }) => {
-  const data = intro.goodies.filter((i, index) => index < 2);
+  const data = intro.goodies.filter((i, index) => index < 3);
 
   return (
     <section className="home">
@@ -76,6 +76,11 @@ export default class IndexPage extends Component {
                 intro={frontmatter.intro}
               />
               {/* <p>{description}</p> */}
+              <div className="flex-center">
+                <Link to="/projects" className="btn-gradient">
+                  More Projects
+                </Link>
+              </div>
             </div>
           </div>
         </div>
