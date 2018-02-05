@@ -1,3 +1,5 @@
+@import "./colors.sass";
+
 .navbar {
   max-height: 60px !important;
   display: flex;
@@ -16,13 +18,13 @@
   max-width: 400px;
 }
 .nav-links .main a {
-  color: #fff;
+  color: $tcasey-gray;
 }
 .nav-right .nav-links .children a {
-  color: #0050a4;
+  color: $tcasey-blue;
 }
 .navbar a:active {
-  color: #0050a4;
+  color: $tcasey-blue;
 }
 
 .nav-right ul {
@@ -37,7 +39,7 @@
   bottom: 0;
   left: 0;
   width: 0%;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid $tcasey-gray;
   transition: 0.4s;
 }
 
@@ -51,7 +53,7 @@
   bottom: 0;
   left: 0;
   width: 0%;
-  border-bottom: 1px solid #0050a4;
+  border-bottom: 1px solid $tcasey-blue;
   transition: 0.4s;
 }
 
@@ -70,7 +72,7 @@
 }
 
 .navbar svg path {
-  fill: "#fff";
+  fill: "$tcasey-gray";
 }
 
 .overlay-menu-disable {
@@ -80,7 +82,7 @@
   width: 100%;
   height: 100%;
   display: table;
-  background: #fff;
+  background: $tcasey-gray;
   top: -100%;
   transition: 0.5s;
   z-index: -1;
@@ -93,7 +95,7 @@
   width: 100vw;
   height: 100%;
   display: table;
-  background: #fff;
+  background: $tcasey-gray;
   top: 60px;
   transition: 0.5s;
   z-index: 4;
@@ -115,7 +117,7 @@
 .overlay-group a,
 .overlay-group a:hover,
 .overlay-group a:focus {
-  color: #edac01;
+  color: $tcasey-yellow;
 }
 
 .routes a:after {
@@ -124,7 +126,7 @@
   bottom: 0;
   left: 0;
   width: 0%;
-  border-bottom: 1px solid #edac01;
+  border-bottom: 1px solid $tcasey-yellow;
   transition: 0.4s;
 }
 

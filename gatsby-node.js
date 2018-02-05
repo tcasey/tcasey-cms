@@ -1,11 +1,14 @@
-const path = require('path');
+const path = require("path");
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   return graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             excerpt(pruneLength: 400)
@@ -18,6 +21,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               title
               image
               description
+              class
+              link
+              role
               intro {
                 goodies {
                   image
@@ -25,6 +31,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                   year
                   role
                   path
+                  class
+                  color
+                  next
                 }
                 heading
                 description
@@ -73,7 +82,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
-        component: path.resolve(`src/templates/${String(node.frontmatter.templateKey)}.js`),
+        component: path.resolve(
+          `src/templates/${String(node.frontmatter.templateKey)}.js`
+        ),
         context: {} // additional data can be passed via context
       });
     });

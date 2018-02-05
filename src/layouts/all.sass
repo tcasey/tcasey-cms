@@ -4,20 +4,8 @@
 @import "./menu.scss"
 @import "./footer.scss"
 @import "./circle.scss"
-@import "./icon.scss"
-
-// Config
-$tcasey-blue: #0050A4
-$tcasey-blue-invert: #fff
-$tcasey-green: #3EC7E0
-$tcasey-gray: #f2f2f2
-$tcasey-yellow: #edac01
-
-$primary: $tcasey-blue
-$primary-invert: $tcasey-blue-invert
-$info: $tcasey-yellow
-$footer-background-color: $tcasey-gray
-$light: rgba(255,255,0,0)
+@import "./projects.sass"
+@import "./colors.sass"
 
 a.navbar-item:hover
   color: $tcasey-blue !important
@@ -54,58 +42,6 @@ body::-webkit-scrollbar
 body::-webkit-scrollbar-thumb
   background-color: $tcasey-blue
 
-.home .projects
-  position: relative
-  float: left
-  // padding: 0 20px 0 20px
-
-.projects-image-container
-  display: flex
-  justify-content: space-between
-  align-items: center
-  flex-direction: row
-
-.projects-image
-  width: 120px
-
-.projects .content h3,
-.projects article a p,
-    transition: color .3s ease-in-out
-    will-change: color
-
-.projects .content:hover
-    color: $tcasey-blue-invert
-    background-color: $tcasey-blue
-    border: 0 !important
-    box-shadow: 0 25px 35px rgba(0,0,255,.2)
-    transition: background .28s 0s;
-    -o-transition: background .28s 0s;
-    -moz-transition: background .28s 0s;
-    -webkit-transition: background .28s 0s;
-
-.projects .content:hover h3
-    color: $tcasey-blue-invert
-
-.project-text
-    top: 0
-    left: 0
-    position: absolute
-    display: block
-    vertical-align: top
-    width: auto
-    padding: 2em
-    transition: all .3s ease-in-out
-    will-change: left,top
-    z-index: 1
-    float: left
-    color: black
-.projects .content:hover .project-text
-    color: $tcasey-blue-invert
-    top: 25px
-    left: 30px
-
-.projects .content:hover svg path
-  fill: white
 .is-primary
   background-color: $tcasey-blue
 .footer

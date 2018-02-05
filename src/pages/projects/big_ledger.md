@@ -3,6 +3,11 @@ templateKey: project
 path: /projects/big-ledger
 title: Big Ledger
 date: 2017-12-17T15:04:10.000Z
+class: big-ledger
+role: Development / Design
+link: https://bigledger.io
+color: rgb(5, 117, 230)
+next: /projects/pip
 description: Sifting through Paypal transactions can be tedious and time consuming. Let us safe you time and money, it's what we do best.
 ---
 

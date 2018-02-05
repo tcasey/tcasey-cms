@@ -4,7 +4,7 @@ import ReactSVG from "react-svg";
 
 export default class ProjectGrid extends Component {
   render() {
-    const smallStyle = this.props.small
+    const smallStyle = this.props.smallio
       ? {
           maxWidth: "360px",
           position: "relative",
@@ -19,7 +19,7 @@ export default class ProjectGrid extends Component {
           <article style={smallStyle} key={item.path}>
             <Link to={item.path}>
               <div
-                className="content"
+                className={`content ${item.class}`}
                 style={{
                   border: "1px solid #eaecee",
                   padding: "2em 4em",

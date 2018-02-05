@@ -3,6 +3,11 @@ templateKey: project
 path: /projects/memory-game
 title: Memory Game
 date: 2017-11-17T15:04:10.000Z
+class: memory-game
+role: Development / Design
+link: https://memoryquiz.netlify.com
+color: rgb(135, 169, 178)
+next: /projects/hot-cold
 description: Building this little matching game was a fun way for me to explore svg's & transitions. Tried to make it extra hard on myself so I did it all with only JavaScript.
 ---
 

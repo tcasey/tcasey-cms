@@ -1,0 +1,136 @@
+@import "./colors.sass"
+
+// .home .projects
+//   position: relative
+//   float: left
+
+.projects-image-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-direction: row
+
+.projects-image
+  width: 120px
+
+.projects .content h3,
+.projects article a p,
+  transition: color .3s ease-in-out
+  will-change: color
+
+.projects .content:hover
+  color: $tcasey-blue-invert
+  // background-color: $tcasey-blue
+  border: 0 !important
+  box-shadow: 0 25px 35px rgba(0,0,255,.2)
+  transition: background .28s 0s;
+  -o-transition: background .28s 0s;
+  -moz-transition: background .28s 0s;
+  -webkit-transition: background .28s 0s;
+
+.bit-bounti:hover
+  background-color: $tcasey-bit-bounti
+
+.big-ledger:hover
+  background-image: linear-gradient(253deg, $tcasey-big-ledger-green, $tcasey-big-ledger-blue)
+
+.pip:hover
+  background-color: $tcasey-pip
+
+.projects .home-energy-app:hover
+  background-color: $tcasey-home-energy-app
+
+.projects .office-quiz:hover
+  background-color: $tcasey-office-quiz
+
+.projects .personal-site:hover
+  background-color: $tcasey-personal-site
+
+.projects .pre-course:hover
+  background-color: $tcasey-pre-course-traker
+
+.projects .etsy-bike:hover
+  background-color: $tcasey-etsy-bike
+
+.projects .memory-game:hover
+  background-color: $tcasey-memory-game
+
+.projects .hot-cold:hover
+  background-color: $tcasey-hot-cold
+
+.projects .ncaa-quiz:hover
+  background-color: $tcasey-ncaa-quiz
+
+.projects .content:hover svg path
+  fill: white
+
+.projects .content:hover h3
+  color: $tcasey-blue-invert
+
+.project-text
+  top: 0
+  left: 0
+  position: absolute
+  display: block
+  vertical-align: top
+  width: auto
+  padding: 2em
+  transition: all .3s ease-in-out
+  will-change: left,top
+  z-index: 1
+  float: left
+  color: black
+
+.projects .content:hover .project-text
+  color: $tcasey-blue-invert
+  top: 25px
+  left: 30px
+
+.project-detail .center
+  text-align: center
+  padding: 24px
+
+.project-detail .center a
+  position: relative
+
+.project-detail .center a,
+.project-detail .center a:hover,
+.project-detail .center a:focus
+  color: $tcasey-yellow
+
+.project-detail a:hover:after
+  width: 100%
+
+.project-detail a:after
+  content: ""
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 0%
+  border-bottom: 1px solid $tcasey-blue
+  transition: 0.4s
+
+.project-detail img
+  padding-bottom: 48px
+.project-detail
+  // height: 100vh
+  width: 100vw
+  // position: absolute
+  // top: 0
+  // left: 0
+  .project-background
+    height: 40vh
+    padding-top: 80px
+    width: 100vw
+    .top
+      height: 70%
+    .bottom
+      height: 40%
+      background-color: $tcasey-blue-invert
+      padding: 0 24px 0 24px
+      .link
+        position: relative
+        max-width: 80px
+    h1
+      color: $tcasey-blue-invert
+      // font-size: 88px !important

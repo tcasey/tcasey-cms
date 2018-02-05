@@ -20,7 +20,7 @@ export const HomePageTemplate = ({
     <section className="home">
       <div className="container">
         <div className="content">
-          <ProjectGrid gridItems={data} small />
+          <ProjectGrid gridItems={data} />
         </div>
       </div>
     </section>
@@ -104,6 +104,7 @@ export const homePageQuery = graphql`
             year
             role
             path
+            class
           }
           heading
           description

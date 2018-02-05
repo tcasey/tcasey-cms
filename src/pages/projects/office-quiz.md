@@ -3,6 +3,11 @@ templateKey: project
 path: /projects/office-quiz
 title: Office Quiz
 date: 2017-11-17T15:04:10.000Z
+class: offize-quiz
+role: Development / Design
+link: https://office-quiz.netlify.com/
+color: rgb(68, 138, 255)
+next: /projects/personal-site
 description: Find out which character from The Office you are most like.
 ---
 
