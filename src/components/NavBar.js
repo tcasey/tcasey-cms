@@ -16,10 +16,10 @@ class NavBar extends Component {
   }
   render() {
     const { location: { pathname }, menu } = this.props;
-    let linkColor = "#001eff";
+    let linkColor = "#0050A4";
     let linkClass = "children";
     let logoStyle;
-    if (pathname === "/") {
+    if (pathname === "/" || pathname === "/projects/") {
       logoStyle = {
         display: "flex",
         justifyContent: "center",
@@ -33,19 +33,25 @@ class NavBar extends Component {
       <nav className="navbar is-light columns">
         <Media query="(min-width: 800px)">
           <div className="navbar is-light columns full-menu">
-            {pathname === "/" ? (
+            {pathname === "/" || pathname === "/projects/" ? (
               <div className="nav-left column">
                 <span className="name" style={{ color: linkColor }}>
                   Trevor Casey
                 </span>
               </div>
             ) : null}
-            <div className="nav-center column">
+            <div
+              className={
+                pathname === "/" || pathname === "/projects/"
+                  ? "nav-center column"
+                  : "nav-center column is-two-thirds"
+              }
+            >
               <Link to="/" className="logo-wrapper" style={logoStyle}>
                 <Logo width={35} height={35} color={linkColor} />
               </Link>
             </div>
-            <div className="nav-right column">
+            <div className={`nav-right column ${linkClass}-wrapper`}>
               <ul className="nav-links">
                 <li className={linkClass}>
                   <Link className="" to="/bio">
@@ -75,7 +81,7 @@ class NavBar extends Component {
           <div className="navbar columns is-fixed-top mobile-menu">
             <div className="nav-left column">
               <Link to="/" className="logo-wrapper">
-                <Logo width={40} height={40} color={"#001eff"} />
+                <Logo width={40} height={40} color={"#0050A4"} />
               </Link>
             </div>
             <div className="nav-center column" />

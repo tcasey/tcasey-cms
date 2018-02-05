@@ -12,14 +12,17 @@
 .nav-links .children {
   position: relative;
 }
+.nav-links .children-wrapper {
+  max-width: 400px;
+}
 .nav-links .main a {
   color: #fff;
 }
 .nav-right .nav-links .children a {
-  color: #001eff;
+  color: #0050a4;
 }
 .navbar a:active {
-  color: #001eff;
+  color: #0050a4;
 }
 
 .nav-right ul {
@@ -48,7 +51,7 @@
   bottom: 0;
   left: 0;
   width: 0%;
-  border-bottom: 1px solid #001eff;
+  border-bottom: 1px solid #0050a4;
   transition: 0.4s;
 }
 
