@@ -12,31 +12,29 @@ class Footer extends Component {
     const { location: { pathname } } = this.props;
     return (
       <footer>
-        {pathname === "/" || pathname === "/projects/" ? (
-          <div className="container-fluid footer-rectangle elements-in once active">
-            <div className="footer-background" />
-            <div className="row contact columns">
-              <div className="column is-half-tablet is-two-thirds-desktop">
-                <div className="info footer-rectangle-left">
-                  <p>Let’s work together</p>
-                  <h1>
-                    <a href="mailto:hello@tcasey.me">hello@tcasey.me</a>
-                  </h1>
-                </div>
+        <div className="container-fluid footer-rectangle elements-in once active">
+          <div className="footer-background" />
+          <div className="row contact columns">
+            <div className="column is-half-tablet is-two-thirds-desktop">
+              <div className="info footer-rectangle-left">
+                <p>Let’s work together</p>
+                <h1>
+                  <a href="mailto:hello@tcasey.me">hello@tcasey.me</a>
+                </h1>
               </div>
-              <div className="column is-half-tablet is-half-desktop">
-                <div className="info footer-rectangle-left">
-                  <p>Let’s talk code</p>
-                  <h1>
-                    <a href="https://twitter.com/_tcasey_" target="_blank">
-                      @_tcasey_
-                    </a>
-                  </h1>
-                </div>
+            </div>
+            <div className="column is-half-tablet is-half-desktop">
+              <div className="info footer-rectangle-left">
+                <p>Let’s talk code</p>
+                <h1>
+                  <a href="https://twitter.com/_tcasey_" target="_blank">
+                    @_tcasey_
+                  </a>
+                </h1>
               </div>
             </div>
           </div>
-        ) : null}
+        </div>
 
         <div className="container footer-bottom">
           <div className="row columns is-desktop">

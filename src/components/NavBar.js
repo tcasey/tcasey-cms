@@ -16,10 +16,11 @@ class NavBar extends Component {
   }
   render() {
     const { location: { pathname }, menu } = this.props;
+    let navColor = "is-light";
     let linkColor = "#0050A4";
     let linkClass = "children";
     let logoStyle;
-    if (pathname === "/" || pathname === "/projects/") {
+    if (pathname === "/" || pathname === "/bio" || pathname === "/blog") {
       logoStyle = {
         display: "flex",
         justifyContent: "center",
@@ -27,13 +28,18 @@ class NavBar extends Component {
       };
       linkClass = "main";
       linkColor = "#fff";
+      if (pathname === "/bio") {
+        navColor = "is-info";
+      } else if (pathname === "/blog") {
+        navColor = "is-primary";
+      }
     }
 
     return (
-      <nav className="navbar is-light columns">
+      <nav className={`navbar ${navColor} columns`}>
         <Media query="(min-width: 800px)">
-          <div className="navbar is-light columns full-menu">
-            {pathname === "/" || pathname === "/projects/" ? (
+          <div className={`navbar ${navColor} columns full-menu`}>
+            {pathname === "/" || pathname === "/bio" || pathname === "/blog" ? (
               <div className="nav-left column">
                 <span className="name" style={{ color: linkColor }}>
                   Trevor Casey
@@ -42,7 +48,7 @@ class NavBar extends Component {
             ) : null}
             <div
               className={
-                pathname === "/" || pathname === "/projects/"
+                pathname === "/" || pathname === "/bio" || pathname === "/blog"
                   ? "nav-center column"
                   : "nav-center column is-two-thirds"
               }
