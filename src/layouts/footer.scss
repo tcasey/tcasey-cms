@@ -230,8 +230,10 @@ a {
   transition: 0.4s;
 }
 
-.footer-rectangle .info a:hover:after {
-  width: 100%;
+@media (hover: hover) {
+  .footer-rectangle .info a:hover:after {
+    width: 100%;
+  }
 }
 .footer-navbar-nav li {
   position: relative;
@@ -247,10 +249,11 @@ a {
   transition: 0.4s;
 }
 
-.footer-navbar-nav a:hover:after {
-  width: 100%;
+@media (hover: hover) {
+  .footer-navbar-nav a:hover:after {
+    width: 100%;
+  }
 }
-
 :after,
 :before {
   -webkit-box-sizing: border-box;

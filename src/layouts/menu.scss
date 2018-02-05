@@ -43,8 +43,10 @@
   transition: 0.4s;
 }
 
-.nav-links .main a:hover:after {
-  width: 100%;
+@media (hover: hover) {
+  .nav-links .main a:hover:after {
+    width: 100%;
+  }
 }
 
 .nav-links .children a:after {
@@ -57,8 +59,10 @@
   transition: 0.4s;
 }
 
-.nav-links .children a:hover:after {
-  width: 100%;
+@media (hover: hover) {
+  .nav-links .children a:hover:after {
+    width: 100%;
+  }
 }
 
 .nav-left .name {
@@ -130,8 +134,10 @@
   transition: 0.4s;
 }
 
-.routes a:hover:after {
-  width: 100%;
+@media (hover: hover) {
+  .routes a:hover:after {
+    width: 100%;
+  }
 }
 .overlay-group li {
   -webkit-transform: translateY(0);
