@@ -32,7 +32,7 @@ export const ProjectTemplate = ({
           <div className="container bottom">
             <div className="columns is-flex" style={{ width: "100%" }}>
               <div className="column">
-                <h5>Responisibilty</h5>
+                <h5>Responsibilty</h5>
                 <span>{role}</span>
               </div>
               <div className="column is-one-quarter-mobile">
