@@ -42,7 +42,7 @@ export const ProjectTemplate = ({
               <div className="column is-one-quarter-mobile link">
                 <h5>Project</h5>
                 <span>
-                  <Link to={projectLink}>Demo</Link>
+                  <a href={projectLink}>Demo</a>
                 </span>
               </div>
               {/* <div className="column">
@@ -62,7 +62,7 @@ export const ProjectTemplate = ({
           </div>
           <h3 className="center">
             Checkout my next{" "}
-            <Link to={next} className={projectClass}>
+            <Link to={next}>
               project
             </Link>
           </h3>
