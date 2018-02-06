@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-path: vs-code-theme
+path: /vs-code-theme
 title: VS Code Custom Theme
 date: 2018-02-06T04:48:03.105Z
 description: "\nI've been using themes built by other people for a while now and for the most part they've been great. I don't know if it's my inner designer coming out or what but I've finally had enough of all these themes and decided to build one of my own. \U0001F60A"
@@ -22,7 +22,7 @@ The important parts are the `colors` and `tokenColors` sections here. Within the
 The `colors` object contains key value pairs like these:
 
 ```
-"colors": { 
+"colors": {
   "editor.background": "#193549", // This is the main background color
   "editor.foreground": "#fff", // this is the main text colour
   "editor.findMatchBackground": "#ff9900", // Currently found item
@@ -70,6 +70,6 @@ Now again `Cmd+Shift+P` and run `Preferences: Color Theme`. If your theme and `p
 If you need a reference then check out [my theme](https://github.com/tcasey/caddy-vscode). Once you've got all that in place you just need to `refresh` your editor via `Cmd+Shift+P` and then run `Reload Window`.
 
 ## Conclusion
-This is basically it. You can now — with a lot of patience, start writing your own theme. When I was making mine I found it both very satisfying and also a bit tricky at times. Hopefully these tips can help you avoid any tricky moments that I encountered. 
+This is basically it. You can now — with a lot of patience, start writing your own theme. When I was making mine I found it both very satisfying and also a bit tricky at times. Hopefully these tips can help you avoid any tricky moments that I encountered.
 
  If you need a reference point feel free to check out, or use, [my theme Caddy](https://github.com/tcasey/caddy-vscode).
