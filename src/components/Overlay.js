@@ -23,17 +23,17 @@ export default class Overlay extends Component {
         <div className="overlay-group">
           <ul className="columns">
             <li className="column routes">
-              <Link onClick={this.go} to="/projects/">
+              <Link onClick={this.go} to="/projects">
                 projects
               </Link>
             </li>
             <li className="column routes">
-              <Link onClick={this.go} to="/bio/">
+              <Link onClick={this.go} to="/bio">
                 bio
               </Link>
             </li>
             <li className="column routes">
-              <Link onClick={this.go} to="/blog/">
+              <Link onClick={this.go} to="/blog">
                 blog
               </Link>
             </li>

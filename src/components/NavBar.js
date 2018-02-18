@@ -17,29 +17,49 @@ class NavBar extends Component {
   render() {
     const { location: { pathname }, menu } = this.props;
     let navColor = "is-light";
+    let navPosition = "relative";
     let linkColor = "#0050A4";
     let linkClass = "children";
     let logoStyle;
-    if (pathname === "/" || pathname === "/bio" || pathname === "/blog") {
+    let logoDimensions = 48;
+    if (
+      pathname === "/" ||
+      pathname === "/bio" ||
+      pathname === "/blog" ||
+      pathname.includes("/projects")
+    ) {
       logoStyle = {
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        height: "100%"
       };
       linkClass = "main";
       linkColor = "#fff";
-      if (pathname === "/bio") {
-        navColor = "is-info";
-      } else if (pathname === "/blog") {
+      if (
+        pathname === "/blog" ||
+        pathname === "/bio" ||
+        pathname === "/projects"
+      ) {
         navColor = "is-primary";
+        // logoDimensions = 64;
       }
+    }
+    if (pathname === "/" || pathname.includes("/projects/")) {
+      navPosition = "absolute";
     }
 
     return (
-      <nav className={`navbar ${navColor} columns`}>
+      <nav
+        className={`navbar ${navColor} columns`}
+        style={{ position: navPosition }}
+      >
         <Media query="(min-width: 800px)">
           <div className={`navbar ${navColor} columns full-menu`}>
-            {pathname === "/" || pathname === "/bio" || pathname === "/blog" ? (
+            {pathname === "/" ||
+            pathname === "/bio" ||
+            pathname === "/blog" ||
+            pathname.includes("/projects") ? (
               <div className="nav-left column">
                 <span className="name" style={{ color: linkColor }}>
                   Trevor Casey
@@ -48,13 +68,20 @@ class NavBar extends Component {
             ) : null}
             <div
               className={
-                pathname === "/" || pathname === "/bio" || pathname === "/blog"
+                pathname === "/" ||
+                pathname === "/bio" ||
+                pathname === "/blog" ||
+                pathname.includes("/projects")
                   ? "nav-center column"
                   : "nav-center column is-two-thirds"
               }
             >
               <Link to="/" className="logo-wrapper" style={logoStyle}>
-                <Logo width={35} height={35} color={linkColor} />
+                <Logo
+                  width={logoDimensions}
+                  height={logoDimensions}
+                  color={linkColor}
+                />
               </Link>
             </div>
             <div className={`nav-right column ${linkClass}-wrapper`}>
@@ -87,7 +114,11 @@ class NavBar extends Component {
           <div className="navbar columns is-fixed-top mobile-menu">
             <div className="nav-left column">
               <Link to="/" className="logo-wrapper">
-                <Logo width={40} height={40} color={"#0050A4"} />
+                <Logo
+                  width={logoDimensions}
+                  height={logoDimensions}
+                  color={"#0050A4"}
+                />
               </Link>
             </div>
             <div className="nav-center column" />

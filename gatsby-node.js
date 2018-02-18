@@ -19,10 +19,11 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               path
               date
               title
-              image
+              headline
               description
               class
               link
+              image
               role
               intro {
                 goodies {

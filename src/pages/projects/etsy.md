@@ -6,14 +6,18 @@ date: 2016-12-17T15:04:10.000Z
 class: etsy-bike
 role: Development / Design
 link: http://tcasey.github.io/Etsy-Hack/
+image: /img/bike.svg
 color: rgb(245, 100, 0)
 next: /projects/memory-game
-description: A couple of years ago I planned ahead for Christmas & made a website to help answer the "What do you want for Christmas?" questions
+headline: Filter Etsy for the perfect gift.
+description: Searching Etsy for gifts can be time consuming. All About Road Bikes makes it fast & simple to find the perfect gift for that road bike enthusiast in your life.
 ---
 
-![about](/img/etsy-bike/etsy-bike-about.png)
+<!-- ![about](/img/etsy-bike/etsy-bike-about.png) -->
+
 ![general](/img/etsy-bike/etsy-bike-general.png)
-![etsy-link](/img/etsy-bike/etsy-bike-link.png)
+
+<!-- ![etsy-link](/img/etsy-bike/etsy-bike-link.png) -->
 
 ## Tools Used
 

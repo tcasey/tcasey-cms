@@ -6,6 +6,8 @@ import Footer from "../components/Footer";
 import Overlay from "../components/Overlay";
 import "./all.sass";
 
+require("prismjs/themes/prism-solarizedlight.css");
+
 export default class TemplateWrapper extends Component {
   constructor(props) {
     super(props);

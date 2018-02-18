@@ -28,9 +28,18 @@ a:focus
 
 .flex-center
   display: flex
-  justify-content:  center
+  justify-content: center
   align-items: center
   padding-top: 104px
+
+.flex-around
+  display: flex
+  justify-content: space-around
+  align-items: center
+  padding-top: 104px
+
+.flex-column
+  flex-direction: column
 
 .margin-top-0
   margin-top: 0 !important
@@ -42,7 +51,7 @@ body::-webkit-scrollbar, ::-webkit-scrollbar-track
 body::-webkit-scrollbar
   overflow: visible
 body::-webkit-scrollbar-thumb
-  background-color: $tcasey-blue
+  background: linear-gradient(to top, #f8d602, $tcasey-yellow);
 
 .is-primary
   background-color: $tcasey-blue

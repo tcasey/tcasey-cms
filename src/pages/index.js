@@ -110,6 +110,7 @@ export const homePageQuery = graphql`
             role
             path
             class
+            color
           }
           heading
           description
