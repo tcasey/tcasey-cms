@@ -23,6 +23,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               description
               class
               link
+              image
               role
               intro {
                 goodies {

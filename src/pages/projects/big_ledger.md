@@ -6,6 +6,7 @@ date: 2017-12-17T15:04:10.000Z
 class: big-ledger
 role: Development / Design
 link: https://bigledger.io
+image: /img/big_ledger.svg
 color: rgb(5, 117, 230)
 next: /projects/pip
 description: Sifting through Paypal transactions can be tedious and time consuming. Let us safe you time and money, it's what we do best.

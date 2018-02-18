@@ -55,6 +55,7 @@ export const projectPageQuery = graphql`
             role
             path
             class
+            color
           }
           heading
           description
