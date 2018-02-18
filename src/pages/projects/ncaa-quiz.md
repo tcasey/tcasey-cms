@@ -9,13 +9,17 @@ link: http://tcasey.github.io/NCAA-Quiz/
 image: /img/ncaa.svg
 color: rgb(9, 91, 165)
 next: /projects/bit-bounti
-description: Quiz built to check who the real NCAA Football fans are. Give it a try 😉
+headline: Test your NCAAF knowledge.
+description: Taking quizes helps engrave facts & principles in your mind. Why not take a break from studying/working and quiz yourself on something fun for a change.
 ---
 
-![landing](/img/ncaa/landing.png)
+<!-- ![landing](/img/ncaa/landing.png) -->
+
 ![questions](/img/ncaa/questions.png)
-![feedback](/img/ncaa/feedback.png)
-![score](/img/ncaa/score.png)
+
+<!-- ![feedback](/img/ncaa/feedback.png) -->
+
+<!-- ![score](/img/ncaa/score.png) -->
 
 ## Tools Used
 

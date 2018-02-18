@@ -21,7 +21,7 @@ class NavBar extends Component {
     let linkColor = "#0050A4";
     let linkClass = "children";
     let logoStyle;
-    let logoDimensions = 35;
+    let logoDimensions = 48;
     if (
       pathname === "/" ||
       pathname === "/bio" ||
@@ -31,7 +31,8 @@ class NavBar extends Component {
       logoStyle = {
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        height: "100%"
       };
       linkClass = "main";
       linkColor = "#fff";
@@ -113,7 +114,11 @@ class NavBar extends Component {
           <div className="navbar columns is-fixed-top mobile-menu">
             <div className="nav-left column">
               <Link to="/" className="logo-wrapper">
-                <Logo width={40} height={40} color={"#0050A4"} />
+                <Logo
+                  width={logoDimensions}
+                  height={logoDimensions}
+                  color={"#0050A4"}
+                />
               </Link>
             </div>
             <div className="nav-center column" />

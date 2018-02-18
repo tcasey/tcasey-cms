@@ -9,6 +9,7 @@ import GoTo from "../components/GoTo";
 export const ProjectTemplate = ({
   content,
   contentComponent,
+  headline,
   description,
   title,
   next,
@@ -32,6 +33,7 @@ export const ProjectTemplate = ({
         >
           <div className="container section top">
             <h1 className="has-text-weight-bold is-size-1">{title}</h1>
+            <p className="subtitle has-text-weight-bold ">{headline}</p>
           </div>
           <div className="container bottom">
             {/* <div className="columns is-flex" style={{ width: "100%" }}>
@@ -64,17 +66,20 @@ export const ProjectTemplate = ({
               <p>{description}</p>
             </div>
           </div>
-          <div className="center columns">
+          <div className="center columns flex-column">
             <div className="column">
-              <h4>Year</h4>
+              <h2>Year</h2>
               <span>{date}</span>
             </div>
             <div className="column">
-              <h4>Responsibilty</h4>
+              <h2>Responsibilty</h2>
               <span>{role}</span>
             </div>
+            <div className="column content-wrapper">
+              <ProjectContent content={content} />
+            </div>
           </div>
-          <div className="center flex-center">
+          <div className="center flex-around">
             <GoBack />
             <a href={projectLink} target="_blank">
               <ReactSVG
@@ -99,6 +104,7 @@ export default ({ data }) => {
       content={post.html}
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
+      headline={post.frontmatter.headline}
       helmet={<Helmet title={`Project | ${post.frontmatter.title}`} />}
       title={post.frontmatter.title}
       projectClass={post.frontmatter.class}
@@ -123,6 +129,7 @@ export const projectQuery = graphql`
         title
         description
         color
+        headline
         next
         class
         role

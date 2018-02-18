@@ -19,7 +19,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               path
               date
               title
-              image
+              headline
               description
               class
               link

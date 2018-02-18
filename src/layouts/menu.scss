@@ -31,6 +31,8 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .nav-links .main a:after {
@@ -68,6 +70,8 @@
 .nav-left .name {
   padding-left: 24px;
   width: 100%;
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .mobile-menu .nav-right {
@@ -148,4 +152,8 @@
 
 .social-icons-mobile {
   padding-top: 48px;
+}
+
+.mobile-menu span {
+  color: black;
 }

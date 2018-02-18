@@ -4,11 +4,11 @@ import Link from "gatsby-link";
 
 class GoTo extends Component {
   render() {
-    const { location: { pathname }, link } = this.props;
+    const { location: { pathname }, link, width, height } = this.props;
     return (
       <div className="link">
         <Link to={link}>
-          <svg width="14" height="23" viewBox="0 0 14 23">
+          <svg width={width} height={height} viewBox="0 0 14 23">
             <g id="Canvas" transform="translate(-206 -5126)">
               <g id="Right_Chevron">
                 <use
@@ -32,3 +32,8 @@ class GoTo extends Component {
 }
 
 export default withRouter(GoTo);
+
+GoTo.defaultProps = {
+  width: 24,
+  height: 32
+};

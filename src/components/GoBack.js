@@ -3,11 +3,21 @@ import { withRouter } from "react-router-dom";
 
 class GoBack extends Component {
   render() {
-    const { location: { pathname }, history: { goBack } } = this.props;
+    const {
+      location: { pathname },
+      history: { goBack },
+      width,
+      height
+    } = this.props;
     return (
       <div className="link">
         <a>
-          <svg width="14" height="23" viewBox="0 0 14 23" onClick={goBack}>
+          <svg
+            width={width}
+            height={height}
+            viewBox="0 0 14 23"
+            onClick={goBack}
+          >
             <g id="Left_Chevron_Canvas" transform="translate(-156 -5126)">
               <g id="Left_Chevron">
                 <use
@@ -31,3 +41,8 @@ class GoBack extends Component {
 }
 
 export default withRouter(GoBack);
+
+GoBack.defaultProps = {
+  width: 24,
+  height: 32
+};

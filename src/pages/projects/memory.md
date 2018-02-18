@@ -9,13 +9,17 @@ link: https://memoryquiz.netlify.com
 image: /img/memory.svg
 color: rgb(135, 169, 178)
 next: /projects/hot-cold-game
-description: Building this little matching game was a fun way for me to explore svg's & transitions. Tried to make it extra hard on myself so I did it all with only JavaScript.
+headline: Put your memory to the test
+description: Playing a game a day will keep the doctor away. While this hasn't been scientifically proven I'm sure it woldn't hurt.
 ---
 
-![general](/img/memory-game/general.png)
-![select](/img/memory-game/select.png)
+<!-- ![general](/img/memory-game/general.png) -->
+
+<!-- ![select](/img/memory-game/select.png) -->
+
 ![selected](/img/memory-game/selected.png)
-![finished game](/img/memory-game/finished-game.png)
+
+<!-- ![finished game](/img/memory-game/finished-game.png) -->
 
 ## Tools Used
 

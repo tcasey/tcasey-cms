@@ -18,6 +18,10 @@
   transition: color .3s ease-in-out
   will-change: color
 
+.content-wrapper ul
+  list-style: none !important
+  margin: 0 !important
+
 .projects .content:hover
   color: $tcasey-blue-invert
   // background-color: $tcasey-blue
@@ -113,17 +117,12 @@
 .project-detail img
   padding-bottom: 48px
 .project-detail
-  // height: 100vh
   width: 100vw
-  // position: absolute
-  // top: 0
-  // left: 0
   .project-background
-    // height: 40vh
-    padding-top: 100px
+    padding-top: 56px
     width: 100vw
     .top
-      height: 70%
+      height: 36vh
     .bottom
       height: 40%
       background-color: $tcasey-blue-invert
@@ -131,6 +130,7 @@
       .link
         position: relative
         max-width: 80px
-    h1
+    h1, p
       color: $tcasey-blue-invert
+      padding-bottom: 8px
       // font-size: 88px !important
