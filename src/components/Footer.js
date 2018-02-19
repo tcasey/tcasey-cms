@@ -40,7 +40,7 @@ class Footer extends Component {
           <div className="row columns is-desktop">
             <div className="column is-one-fifth-widescreen footer-logo-wrapper">
               <Link className="navbar-brand bottom-logo" to="/">
-                <Logo width={50} height={50} color={"#0050A4"} />
+                <Logo width={50} height={50} color={"#075dff"} />
               </Link>
             </div>
             <div className="column is-hidden-tablet-only is-hidden-desktop-only is-two-fifth-widescreen footer-nav-wrapper">

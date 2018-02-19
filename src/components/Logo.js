@@ -18,5 +18,5 @@ export default class Logo extends Component {
 Logo.defaultProps = {
   width: 225,
   height: 225,
-  color: "#0050A4"
+  color: "#075dff"
 };
