@@ -7,19 +7,13 @@ class: memory-game
 role: Development / Design
 link: https://memoryquiz.netlify.com
 image: /img/memory.svg
+demoImage: /img/memory-game/selected.png
+platform: Web app
 color: rgb(135, 169, 178)
 next: /projects/hot-cold-game
 headline: Put your memory to the test
 description: Playing a game a day will keep the doctor away. While this hasn't been scientifically proven I'm sure it woldn't hurt.
 ---
-
-<!-- ![general](/img/memory-game/general.png) -->
-
-<!-- ![select](/img/memory-game/select.png) -->
-
-![selected](/img/memory-game/selected.png)
-
-<!-- ![finished game](/img/memory-game/finished-game.png) -->
 
 ## Tools Used
 
