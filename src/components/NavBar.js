@@ -18,7 +18,7 @@ class NavBar extends Component {
     const { location: { pathname }, menu } = this.props;
     let navColor = "is-light";
     let navPosition = "relative";
-    let linkColor = "#0050A4";
+    let linkColor = "#075dff";
     let linkClass = "children";
     let logoStyle;
     let logoDimensions = 48;
@@ -117,7 +117,7 @@ class NavBar extends Component {
                 <Logo
                   width={logoDimensions}
                   height={logoDimensions}
-                  color={"#0050A4"}
+                  color={"#075dff"}
                 />
               </Link>
             </div>
