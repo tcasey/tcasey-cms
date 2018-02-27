@@ -6,7 +6,7 @@ export default class DemoiMac extends Component {
 
     return (
       <svg
-        id="Layer_1"
+        id="iMac"
         x="0px"
         y="0px"
         viewBox="160 64 320 338"
@@ -17,6 +17,7 @@ export default class DemoiMac extends Component {
         <g>
           <g id="screen-outside">
             <path
+              className="outline-one"
               fill="#313742"
               d="M458.2 80.5H181.8c-6.5 0-11.8 5.3-11.8 11.8V251h300V92.3C470 85.8 464.7 80.5 458.2 80.5z"
             />
