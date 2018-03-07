@@ -124,8 +124,10 @@
 }
 
 .home-header .hero-container .container {
-  position: relative;
+  position: absolute;
   z-index: 3;
+  top: 120px;
+  left: 24px;
 }
 .home-header .hero-container .container h1 {
   color: white;
@@ -180,7 +182,7 @@
   transition: 0.75s;
 }
 .home-header h1 {
-  font-size: 60px;
+  font-size: 4rem;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.5;

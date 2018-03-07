@@ -7,7 +7,7 @@ export default class BlogPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark;
     return (
       <section className="section">
-        <div className="container">
+        <div className="container blog-container">
           <div className="content">
             <h1 className="has-text-weight-bold is-size-2">Blog</h1>
           </div>

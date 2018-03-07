@@ -64,7 +64,7 @@ export default class IndexPage extends Component {
       <section>
         <Hero scrollY={scrollY} />
         <div className="container content">
-          <div className="container section is-mobile">
+          <div className="container section is-mobile home-container">
             <div>
               <h2 className="title is-size-2 has-text-weight-bold is-bold-light">
                 Some of my Latest Work

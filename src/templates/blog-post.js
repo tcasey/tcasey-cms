@@ -13,7 +13,7 @@ export const BlogPostTemplate = ({
   return (
     <section className="section">
       {helmet ? helmet : ""}
-      <div className="container content">
+      <div className="container content blog-container">
         <div className="columns">
           <div className="column">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">

@@ -13,7 +13,7 @@ export const ProjectPageTemplate = ({
 }) => {
   return (
     <section className="section section--gradient">
-      <div className="container">
+      <div className="container projects-container">
         <div className="content">
           <h1 className="has-text-weight-bold is-size-2">{title}</h1>
         </div>

@@ -2,6 +2,7 @@
 templateKey: 'about-page'
 path: /bio
 title: Bio
+image: /img/selfie.jpg
 ---
 ### How I Came Into Tech
 As a kid I would spend hours of each day building things with Legos.
@@ -16,4 +17,4 @@ Since then I've dived deep into it, trying to learn everything about it that I c
 I've been in Web Development since early 2015. Back then I was just starting to realize all the things I could do using JavaScript. Since then I've been on a journey of constant learning & growth. I've built many things since then & have overcome many obstacles in my path. Being upto date on the latest technologies has been a big part of my success. I enjoy learning & spreading that knowledge as I apply & learn on my own.
 
 ### How I Spend My Free Time
-Building things is what I love to do and when I have the time I try to build something to help improve my own life. If I'm not working on making a new SAAS product then I'm probably watching Netflix with my wife or playing with my dog. My life isn't too busy but if I had more time I'd being doing something active. Play golf, basketball, or road biking is what comes to mind first so lets start there.
+Building things is what I love to do and when I have the time I try to build something to scratch my own itch. If I'm not working on making a new SAAS product then I'm probably watching Netflix with my wife or playing with my dog. My life isn't too busy but if I had more time I'd being doing something active. Play golf, basketball, or road biking is what comes to mind first so lets start there.
