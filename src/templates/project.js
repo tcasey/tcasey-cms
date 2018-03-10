@@ -2,6 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
 import ReactSVG from "react-svg";
+import Particles from "react-particles-js";
+
 import Content, { HTMLContent } from "../components/Content";
 import GoBack from "../components/GoBack";
 import GoTo from "../components/GoTo";
@@ -43,6 +45,39 @@ export const ProjectTemplate = ({
             </h2>
           </div>
           <div className="container bottom" />
+          <Particles
+            params={{
+              particles: {
+                size: {
+                  value: 4
+                },
+                number: {
+                  value: 20,
+                  density: {
+                    enable: true
+                  }
+                },
+                line_linked: {
+                  shadow: {
+                    enable: true,
+                    color: "#f3f3f3",
+                    blur: 5
+                  }
+                },
+                move: {
+                  enable: true,
+                  speed: 4,
+                  random: true
+                }
+              }
+            }}
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: 0
+            }}
+          />
         </div>
         <div className="container">
           {/* <div className="columns">
