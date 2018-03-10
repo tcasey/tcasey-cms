@@ -15,7 +15,7 @@ class Footer extends Component {
         <div className="container-fluid footer-rectangle elements-in once active">
           <div className="footer-background" />
           <div className="row contact columns">
-            <div className="column is-half-tablet is-two-thirds-desktop">
+            <div className="column is-half-tablet is-half-desktop">
               <div className="info footer-rectangle-left">
                 <p>Let’s work together</p>
                 <h1>
