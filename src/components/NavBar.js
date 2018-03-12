@@ -54,7 +54,7 @@ class NavBar extends Component {
         className={`navbar ${navColor} columns`}
         style={{ position: navPosition }}
       >
-        <Media query="(min-width: 800px)">
+        <Media query="(min-width: 1000px)">
           <div className={`navbar ${navColor} columns full-menu`}>
             {pathname === "/" ||
             pathname === "/bio" ||
@@ -110,7 +110,7 @@ class NavBar extends Component {
             </div>
           </div>
         </Media>
-        <Media query="(max-width: 800px)">
+        <Media query="(max-width: 1000px)">
           <div className="navbar columns is-fixed-top mobile-menu">
             <div className="nav-left column">
               <Link to="/" className="logo-wrapper">
