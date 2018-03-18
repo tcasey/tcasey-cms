@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
 import ReactSVG from "react-svg";
+import CanvasComponent from './CanvasComponent';
 
 export default class ProjectGrid extends Component {
   render() {
@@ -12,6 +13,13 @@ export default class ProjectGrid extends Component {
           paddingRight: "20px"
         }
       : null;
+    const canvasStyle = {
+      position: "absolute",
+      top: 0,
+      // height: "100%",
+      // width: "100%",
+      left: 0,
+    };
 
     return (
       <div className="projects">
@@ -27,6 +35,11 @@ export default class ProjectGrid extends Component {
                   position: "relative"
                 }}
               >
+                <CanvasComponent
+                  ref="canvas"
+                  className="project-circles"
+                  style={canvasStyle}
+                />
                 <div className="project-text">
                   <div style={{ fontSize: "x-large" }}>
                     {item.title || "project"}
