@@ -41,7 +41,7 @@ export default class Hero extends Component {
           <div className="container">
             <div className="hero">
               <h1 className="is-size-3-mobile">
-                <span>Software Developer.</span>
+                <span>Software Engineer.</span>
                 <span>Perpetual Student.</span>
                 <span>Craftsman.</span>
               </h1>

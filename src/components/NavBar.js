@@ -15,35 +15,31 @@ class NavBar extends Component {
     this.props.toggleMenu();
   }
   render() {
-    const { location: { pathname }, menu } = this.props;
+    const {
+      location: { pathname },
+      menu
+    } = this.props;
     let navColor = "is-light";
     let navPosition = "relative";
     let linkColor = "#075dff";
     let linkClass = "children";
-    let logoStyle;
     let logoDimensions = 48;
+    let logoStyle = {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100%"
+    };
+
+    linkClass = "main";
+    linkColor = "#fff";
     if (
-      pathname === "/" ||
-      pathname === "/bio" ||
       pathname === "/blog" ||
-      pathname.includes("/projects")
+      pathname === "/bio" ||
+      pathname === "/projects"
     ) {
-      logoStyle = {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%"
-      };
-      linkClass = "main";
-      linkColor = "#fff";
-      if (
-        pathname === "/blog" ||
-        pathname === "/bio" ||
-        pathname === "/projects"
-      ) {
-        navColor = "is-primary";
-        // logoDimensions = 64;
-      }
+      navColor = "is-primary";
+      // logoDimensions = 64;
     }
     if (pathname === "/" || pathname.includes("/projects/")) {
       navPosition = "absolute";
@@ -56,26 +52,12 @@ class NavBar extends Component {
       >
         <Media query="(min-width: 1000px)">
           <div className={`navbar ${navColor} columns full-menu`}>
-            {pathname === "/" ||
-            pathname === "/bio" ||
-            pathname === "/blog" ||
-            pathname.includes("/projects") ? (
-              <div className="nav-left column">
-                <span className="name" style={{ color: linkColor }}>
-                  Trevor Casey
-                </span>
-              </div>
-            ) : null}
-            <div
-              className={
-                pathname === "/" ||
-                pathname === "/bio" ||
-                pathname === "/blog" ||
-                pathname.includes("/projects")
-                  ? "nav-center column"
-                  : "nav-center column is-two-thirds"
-              }
-            >
+            <div className="nav-left column">
+              <span className="name" style={{ color: linkColor }}>
+                Trevor Casey
+              </span>
+            </div>
+            <div className="nav-center column">
               <Link to="/" className="logo-wrapper" style={logoStyle}>
                 <Logo
                   width={logoDimensions}
