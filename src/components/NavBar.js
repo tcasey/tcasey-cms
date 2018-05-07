@@ -54,6 +54,23 @@ class NavBar extends Component {
         className={`navbar ${navColor} columns`}
         style={{ position: navPosition }}
       >
+        <Media query="(max-width: 1000px)">
+          <div className="navbar columns is-fixed-top mobile-menu">
+            <div className="nav-left column">
+              <Link to="/" className="logo-wrapper">
+                <Logo
+                  width={logoDimensions}
+                  height={logoDimensions}
+                  color={"#075dff"}
+                />
+              </Link>
+            </div>
+            <div className="nav-center column" />
+            <div className="nav-right column">
+              <Menu toggleMenu={this.toggleMenu} menu={menu} />
+            </div>
+          </div>
+        </Media>
         <Media query="(min-width: 1000px)">
           <div className={`navbar ${navColor} columns full-menu`}>
             {pathname === "/" ||
@@ -107,23 +124,6 @@ class NavBar extends Component {
                   </a>
                 </li>
               </ul>
-            </div>
-          </div>
-        </Media>
-        <Media query="(max-width: 1000px)">
-          <div className="navbar columns is-fixed-top mobile-menu">
-            <div className="nav-left column">
-              <Link to="/" className="logo-wrapper">
-                <Logo
-                  width={logoDimensions}
-                  height={logoDimensions}
-                  color={"#075dff"}
-                />
-              </Link>
-            </div>
-            <div className="nav-center column" />
-            <div className="nav-right column">
-              <Menu toggleMenu={this.toggleMenu} menu={menu} />
             </div>
           </div>
         </Media>
