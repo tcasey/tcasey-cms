@@ -9,14 +9,18 @@ class Navbar extends Component {
   constructor(props) {
     super(props)
     this.toggleMenu = this.toggleMenu.bind(this)
+    this.pathname = '/'
   }
   toggleMenu() {
     this.props.toggleMenu()
   }
+  componentDidMount() {
+    this.pathname = window.location.pathname
+  }
   render() {
-    const {
-      location: { pathname },
-    } = window
+    if (typeof window !== `undefined`) {
+      this.pathname = window.location.pathname
+    }
     let navColor = 'is-light'
     let navPosition = 'relative'
     let linkColor = '#075dff'
@@ -32,15 +36,15 @@ class Navbar extends Component {
     linkClass = 'main'
     linkColor = '#fff'
     if (
-      pathname.includes('/blog') ||
-      pathname === '/bio' ||
-      pathname === '/projects' ||
-      pathname.includes('/tags')
+      this.pathname.includes('/blog') ||
+      this.pathname === '/bio' ||
+      this.pathname === '/projects' ||
+      this.pathname.includes('/tags')
     ) {
       navColor = 'is-primary'
       // logoDimensions = 64;
     }
-    if (pathname === '/' || pathname.includes('/projects/')) {
+    if (this.pathname === '/' || this.pathname.includes('/projects/')) {
       navPosition = 'absolute'
     }
 

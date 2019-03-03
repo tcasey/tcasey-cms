@@ -8,9 +8,6 @@ import { Link } from 'gatsby'
 
 class Footer extends Component {
   render() {
-    const {
-      location: { pathname },
-    } = window
     return (
       <footer>
         <div className="container-fluid footer-rectangle elements-in once active">
