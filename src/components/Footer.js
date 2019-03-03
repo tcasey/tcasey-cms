@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import twitter from "../img/twitter.svg";
-import linkedin from "../img/linkedin.svg";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
-import Logo from "../components/Logo";
-import Link from "gatsby-link";
+import React, { Component } from 'react'
+import twitter from '../img/twitter.svg'
+import linkedin from '../img/linkedin.svg'
+import github from '../img/github-icon.svg'
+import logo from '../img/logo.svg'
+import Logo from '../components/Logo'
+import { Link } from 'gatsby'
 
 class Footer extends Component {
   render() {
-    const { location: { pathname } } = this.props;
+    const {
+      location: { pathname },
+    } = window
     return (
       <footer>
         <div className="container-fluid footer-rectangle elements-in once active">
@@ -40,7 +41,7 @@ class Footer extends Component {
           <div className="row columns is-desktop">
             <div className="column is-one-fifth-widescreen footer-logo-wrapper">
               <Link className="navbar-brand bottom-logo" to="/">
-                <Logo width={50} height={50} color={"#075dff"} />
+                <Logo width={50} height={50} color={'#075dff'} />
               </Link>
             </div>
             <div className="column is-hidden-tablet-only is-hidden-desktop-only is-two-fifth-widescreen footer-nav-wrapper">
@@ -65,10 +66,10 @@ class Footer extends Component {
             <div className="column is-two-fifth-widescreen copyright">
               <div className="footer-social-icons">
                 <a className="social" href="https://twitter.com/_tcasey_">
-                  <img src={twitter} alt="twitter" style={{ width: "32px" }} />
+                  <img src={twitter} alt="twitter" style={{ width: '32px' }} />
                 </a>
                 <a className="social" href="https://github.com/tcasey">
-                  <img src={github} alt="github" style={{ width: "32px" }} />
+                  <img src={github} alt="github" style={{ width: '32px' }} />
                 </a>
                 <a
                   className="social"
@@ -77,7 +78,7 @@ class Footer extends Component {
                   <img
                     src={linkedin}
                     alt="linkedIn"
-                    style={{ width: "32px" }}
+                    style={{ width: '32px' }}
                   />
                 </a>
               </div>
@@ -88,8 +89,8 @@ class Footer extends Component {
           </div>
         </div>
       </footer>
-    );
+    )
   }
 }
 
-export default withRouter(Footer);
+export default Footer

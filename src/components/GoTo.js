@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import Link from "gatsby-link";
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
 
 class GoTo extends Component {
   render() {
-    const { location: { pathname }, link, width, height } = this.props;
+    const { link, width, height } = this.props
     return (
       <div className="link">
         <Link to={link}>
@@ -27,13 +26,13 @@ class GoTo extends Component {
           </svg>
         </Link>
       </div>
-    );
+    )
   }
 }
 
-export default withRouter(GoTo);
+export default GoTo
 
 GoTo.defaultProps = {
   width: 24,
-  height: 32
-};
+  height: 32,
+}

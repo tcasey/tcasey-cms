@@ -1,28 +1,6 @@
 import React from 'react'
-import CMS from 'netlify-cms'
 
-import Projects from 'site/components/Projects'
-import Testimonials from 'site/components/Testimonials'
-import Pricing from 'site/components/Pricing'
-
-import { AboutPageTemplate } from 'site/templates/about-page'
-import { ProjectPageTemplate } from 'site/templates/projects-page'
-import { BlogPostTemplate } from 'site/templates/blog-post'
-
-const AboutPagePreview = ({ entry, widgetFor }) => (
-  <AboutPageTemplate
-    title={entry.getIn(['data', 'title'])}
-    content={widgetFor('body')}
-  />
-)
-
-const BlogPostPreview = ({ entry, widgetFor }) => (
-  <BlogPostTemplate
-    content={widgetFor('body')}
-    description={entry.getIn(['data', 'description'])}
-    title={entry.getIn(['data', 'title'])}
-  />
-)
+import { ProjectPageTemplate } from '../../templates/projects-page'
 
 const ProjectPagePreview = ({ entry, widgetFor, getAsset }) => {
   const entryBlurbs = entry.getIn(['data', 'intro', 'goodies'])
@@ -68,7 +46,4 @@ const ProjectPagePreview = ({ entry, widgetFor, getAsset }) => {
   )
 }
 
-CMS.registerPreviewStyle('/styles.css')
-CMS.registerPreviewTemplate('bio', AboutPagePreview)
-CMS.registerPreviewTemplate('projects', ProjectPagePreview)
-CMS.registerPreviewTemplate('blog', BlogPostPreview)
+export default ProjectPagePreview

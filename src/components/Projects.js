@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import Link from "gatsby-link";
-import ReactSVG from "react-svg";
+import React, { Component } from 'react'
+import { Link, graphql } from 'gatsby'
+import ReactSVG from 'react-svg'
 
 export default class ProjectGrid extends Component {
   render() {
     const smallStyle = this.props.smallio
       ? {
-          maxWidth: "360px",
-          position: "relative",
-          float: "left",
-          paddingRight: "20px"
+          maxWidth: '360px',
+          position: 'relative',
+          float: 'left',
+          paddingRight: '20px',
         }
-      : null;
+      : null
 
     return (
       <div className="projects">
@@ -21,27 +21,27 @@ export default class ProjectGrid extends Component {
               <div
                 className={`content ${item.class}`}
                 style={{
-                  border: "1px solid #eaecee",
-                  padding: "2em 4em",
-                  margin: "2em 0 2em 0",
-                  position: "relative"
+                  border: '1px solid #eaecee',
+                  padding: '2em 4em',
+                  margin: '2em 0 2em 0',
+                  position: 'relative',
                 }}
               >
                 <div className="project-text">
-                  <div style={{ fontSize: "x-large" }}>
-                    {item.title || "project"}
+                  <div style={{ fontSize: 'x-large' }}>
+                    {item.title || 'project'}
                   </div>
-                  <div style={{ fontSize: "small" }}>
-                    {item.role || "All the Things"}
+                  <div style={{ fontSize: 'small' }}>
+                    {item.role || 'All the Things'}
                   </div>
-                  <div style={{ fontSize: "small" }}>
-                    Produced in {item.year || "NaN"}.
+                  <div style={{ fontSize: 'small' }}>
+                    Produced in {item.year || 'NaN'}.
                   </div>
                 </div>
                 <div
                   style={{
-                    height: "100px",
-                    width: "100%"
+                    height: '100px',
+                    width: '100%',
                   }}
                 />
                 <div className="projects-image-container">
@@ -62,7 +62,7 @@ export default class ProjectGrid extends Component {
                   )}
                   <div>
                     <ReactSVG
-                      path={item.image}
+                      path={item.image.publicURL}
                       className="projects-svg"
                       evalScript="always"
                       style={{ height: 120, width: 180 }}
@@ -74,6 +74,43 @@ export default class ProjectGrid extends Component {
           </article>
         ))}
       </div>
-    );
+    )
   }
 }
+
+export const query = graphql`
+  fragment ProjectFragment on Query {
+    projectData: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "projects-page" } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+            image {
+              publicURL
+            }
+            description
+            intro {
+              goodies {
+                image {
+                  publicURL
+                }
+                title
+                year
+                role
+                path
+                class
+                color
+              }
+              heading
+              description
+            }
+          }
+        }
+      }
+    }
+  }
+`

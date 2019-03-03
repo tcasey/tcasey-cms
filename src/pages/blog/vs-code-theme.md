@@ -2,9 +2,14 @@
 templateKey: blog-post
 path: /vs-code-theme
 title: VS Code Custom Theme
+thumbnail: /img/editor.png
 date: 2018-02-06T04:48:03.105Z
 description: "\nI've been using themes built by other people for a while now and for the most part they've been great. I don't know if it's my inner designer coming out or what but I've finally had enough of all these themes and decided to build one of my own. \U0001F60A"
+tags:
+  - vscode
+  - theme
 ---
+
 ## Getting Started
 
 For VS Code it's really rather simple. All you really need is a JSON file. There's a couple of tricks that I've learned the hard way so hopefully you won't have to.
@@ -61,9 +66,9 @@ For the complete list for these values (which I guess is going to change over ti
 
 There's two ways to view your theme in your editor.
 
-One is to publish to the  [VS Code Marketplace](https://code.visualstudio.com/docs/extensions/publish-extension) (which you'll have to do eventually).
+One is to publish to the [VS Code Marketplace](https://code.visualstudio.com/docs/extensions/publish-extension) (which you'll have to do eventually).
 
-The second is load it locally via `.vscode/extensions`. To do this you'll just need to move/make a folder which contains your theme & structured something like  this `my-custom-theme/theme/whatever.json`. It's worth noting that you also need a `package.json` at the root of this folder.
+The second is load it locally via `.vscode/extensions`. To do this you'll just need to move/make a folder which contains your theme & structured something like this `my-custom-theme/theme/whatever.json`. It's worth noting that you also need a `package.json` at the root of this folder.
 
 Run `Cmd+Shift+P` and then choose `Preferences: Color Theme`. If your theme and `package.json` files are setup right, you should be able to see (and select) your new theme from the list.
 
@@ -73,4 +78,4 @@ If you need a reference then check out [my theme](https://github.com/tcasey/cadd
 
 This is basically it. You can now — with a lot of patience, start writing your own theme. When I was making mine I found it both very satisfying and also a bit tricky at times. Hopefully these tips can help you avoid any tricky moments that I encountered.
 
- If you need a reference point feel free to check out, or use, [my theme Caddy](https://github.com/tcasey/caddy-vscode).
+If you need a reference point feel free to check out, or use, [my theme Caddy](https://github.com/tcasey/caddy-vscode).
