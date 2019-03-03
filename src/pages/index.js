@@ -1,20 +1,21 @@
-import React, { Component } from "react";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
-import Script from "react-load-script";
-import Group from "../components/Group";
-import ProjectGrid from "../components/Projects";
-import Hero from "../components/Hero";
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import Script from 'react-load-script'
+import ProjectGrid from '../components/Projects'
+import Hero from '../components/Hero'
+import Layout from '../components/Layout'
 
-export const HomePageTemplate = ({
+const HomePageTemplate = ({
   image,
   title,
   description,
   intro,
   main,
-  testimonials
+  testimonials,
+  goodies,
 }) => {
-  const data = intro.goodies.filter((i, index) => index < 3);
+  console.log(intro)
+  const data = goodies.filter((i, index) => index < 3)
 
   return (
     <section className="home">
@@ -24,44 +25,47 @@ export const HomePageTemplate = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default class IndexPage extends Component {
+class HomePage extends Component {
   constructor(props) {
-    super(props);
-    this.handleScroll = this.handleScroll.bind(this);
+    super(props)
+    this.handleScroll = this.handleScroll.bind(this)
     this.state = {
-      scrollY: 0
-    };
+      scrollY: 0,
+    }
   }
   handleScroll(e) {
-    this.setState({ scrollY: e.currentTarget.scrollY });
+    this.setState({ scrollY: e.currentTarget.scrollY })
   }
   handleScriptLoad() {
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
+      window.netlifyIdentity.on('init', user => {
         if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/'
+          })
         }
-      });
+      })
     }
-    window.netlifyIdentity.init();
+    window.netlifyIdentity.init()
   }
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll)
   }
 
   render() {
-    const { frontmatter } = this.props.data.markdownRemark;
-    const { scrollY } = this.state;
+    const { frontmatter } = this.props.data.homePageData.edges[0].node
+    const {
+      goodies,
+    } = this.props.data.projectData.edges[0].node.frontmatter.intro
+    const { scrollY } = this.state
     return (
-      <section>
+      <Layout>
         <Hero scrollY={scrollY} />
         <div className="container content">
           <div className="container section is-mobile home-container">
@@ -74,6 +78,7 @@ export default class IndexPage extends Component {
                 title={frontmatter.title}
                 description={frontmatter.description}
                 intro={frontmatter.intro}
+                goodies={goodies}
               />
               {/* <p>{description}</p> */}
               <div className="flex-center">
@@ -88,34 +93,28 @@ export default class IndexPage extends Component {
           url="https://identity.netlify.com/v1/netlify-identity-widget.js"
           onLoad={this.handleScriptLoad.bind(this)}
         />
-        <div className="container" />
-      </section>
-    );
+      </Layout>
+    )
   }
 }
 
-export const homePageQuery = graphql`
+export default HomePage
+
+export const pageQuery = graphql`
   query HomePage {
-    markdownRemark(frontmatter: { path: { eq: "/projects" } }) {
-      frontmatter {
-        title
-        path
-        image
-        description
-        intro {
-          goodies {
-            image
+    ...ProjectFragment
+    homePageData: allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
             title
-            year
-            role
-            path
-            class
-            color
           }
-          heading
-          description
         }
       }
     }
   }
-`;
+`
+
+export { HomePageTemplate, HomePage }

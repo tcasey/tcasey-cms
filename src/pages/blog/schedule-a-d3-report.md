@@ -2,16 +2,20 @@
 templateKey: blog-post
 path: /schedule-a-d3-report
 title: Scheduling a D3.js Report
+thumbnail: /img/d3_radar_chart.png
 date: 2016-11-03T15:04:10.000Z
 description: Scheduling a report that is generated using d3 can be tricky, here's a solution I came up with.
+tags:
+  - d3
+  - reports
 ---
 
 About 4 months ago I had a problem. I needed to find a way to send out the reports generated from our app at work into various formats like HTML, CSV, & PDF. Sounds easy right? That’s what I thought too… Here were some of the main initial issues:
 
 We have these pretty sweet d3 charts and we want those in an email. (yes, that’s right… d3.js charts in an email)
 
-* The data in these charts (and reports for that matter) need to look just like they would in the app.
-* This also needs to be a scheduled process that the user shouldn’t have to do every time they want to send one of these reports out.
+- The data in these charts (and reports for that matter) need to look just like they would in the app.
+- This also needs to be a scheduled process that the user shouldn’t have to do every time they want to send one of these reports out.
 
 After reading over those it doesn’t seem too bad right? I mean I’m sure in this modern JavaScript world that we live in that there’s some library that does this. I’m not the first one to think of this right? Well while there are solutions, it’s not quite that easy.
 
@@ -50,4 +54,5 @@ This one depends on a few things but it really comes down to not mixing data bet
 For us it came down to s3 or our database. We decided s3 due to the nature of the files. Since they will never be referenced by us or reused after sending them to the client, it made more sense to leverage s3 for saving the captured files.
 
 ## Send them out
+
 There’s a few libraries out there for sending out emails but we already use nodemailer in our app so it was a no brainer really.

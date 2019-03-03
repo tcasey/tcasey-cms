@@ -1,60 +1,61 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`
+    title: 'tcasey CMS',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
     {
-      resolve: `gatsby-source-filesystem`,
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'uploads',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages"
-      }
+        name: 'pages',
+      },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/img`,
-        name: "images"
-      }
+        name: 'images',
+      },
     },
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-remark-images`,
-      options: {
-        // It's important to specify the maxWidth (in pixels) of
-        // the content container as this plugin uses this as the
-        // base for generating different widths of each image.
-        maxWidth: 590
-      }
-    },
-    `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-relative-images',
             options: {
-              // Class prefix for <pre> tags containing syntax highlighting;
-              // defaults to 'language-' (eg <pre class="language-js">).
-              // If your site loads Prism into the browser at runtime,
-              // (eg for use with libraries like react-live),
-              // you may use this to prevent Prism from re-processing syntax.
-              // This is an uncommon use-case though;
-              // If you're unsure, it's best to use the default value.
-              classPrefix: "language-"
-            }
-          }
-        ]
-      }
+              name: 'uploads',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: "./favicon.png",
+        logo: './favicon.png',
         injectHTML: true,
         icons: {
           android: true,
@@ -65,9 +66,16 @@ module.exports = {
           firefox: true,
           twitter: true,
           yandex: false,
-          windows: false
-        }
-      }
-    }
-  ]
-};
+          windows: false,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/index.js`,
+      },
+    },
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
+  ],
+}

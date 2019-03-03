@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import Link from "gatsby-link";
-import LinkedIn from "./LinkedIn";
-import Github from "./Github";
-import Twitter from "./Twitter";
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import LinkedIn from './LinkedIn'
+import Github from './Github'
+import Twitter from './Twitter'
 
 export default class Overlay extends Component {
   constructor(props) {
-    super(props);
-    this.go = this.go.bind(this);
+    super(props)
+    this.go = this.go.bind(this)
     this.state = {
-      iconColor: "#edac01"
-    };
+      iconColor: '#edac01',
+    }
   }
   go() {
-    this.props.toggleMenu();
+    this.props.toggleMenu()
   }
   render() {
-    const toggle = this.props.menu ? "active" : "disable";
-    const { iconColor } = this.state;
+    const toggle = this.props.menu ? 'active' : 'disable'
+    const { iconColor } = this.state
     return (
       <div className={`overlay-menu-${toggle}`}>
         <div className="overlay-group">
@@ -56,6 +56,6 @@ export default class Overlay extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }

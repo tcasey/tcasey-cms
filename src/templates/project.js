@@ -1,15 +1,13 @@
-import React from "react";
-import Helmet from "react-helmet";
-import Link from "gatsby-link";
-import ReactSVG from "react-svg";
-import Particles from "react-particles-js";
+import React from 'react'
+import Helmet from 'react-helmet'
+import ReactSVG from 'react-svg'
 
-import Content, { HTMLContent } from "../components/Content";
-import GoBack from "../components/GoBack";
-import GoTo from "../components/GoTo";
-import GoDown from "../components/GoDown";
-import DemoiMac from "../components/DemoiMac";
-import DemoiPhone from "../components/DemoiPhone";
+import Content, { HTMLContent } from '../components/Content'
+import GoBack from '../components/GoBack'
+import GoTo from '../components/GoTo'
+import DemoiMac from '../components/DemoiMac'
+import DemoiPhone from '../components/DemoiPhone'
+import Layout from '../components/Layout'
 
 export const ProjectTemplate = ({
   content,
@@ -19,117 +17,87 @@ export const ProjectTemplate = ({
   title,
   next,
   color,
-  projectClass,
+  // projectClass,
   helmet,
   date,
   role,
   projectLink,
-  projectPath,
+  // projectPath,
   projectImage,
   demoImage,
-  platform
+  platform,
 }) => {
-  const ProjectContent = contentComponent || Content;
+  const ProjectContent = contentComponent || Content
   return (
-    <section className="project-detail">
-      {helmet ? helmet : ""}
-      <div className="content">
-        <div
-          className="project-background content"
-          style={{ backgroundColor: color }}
-        >
-          <div className="container section top project-container">
-            <h1 className="has-text-weight-bold is-size-1">{title}</h1>
-            <h2 className="subtitle has-text-weight-bold is-size-5">
-              {headline}
-            </h2>
+    <Layout>
+      <section className="project-detail">
+        {helmet ? helmet : ''}
+        <div className="content">
+          <div
+            className="project-background content"
+            style={{ backgroundColor: color }}
+          >
+            <div className="container section top project-container">
+              <h1 className="has-text-weight-bold is-size-1">{title}</h1>
+              <h2 className="subtitle has-text-weight-bold is-size-5">
+                {headline}
+              </h2>
+            </div>
+            <div className="container bottom" />
           </div>
-          <div className="container bottom" />
-          <Particles
-            params={{
-              particles: {
-                size: {
-                  value: 4
-                },
-                number: {
-                  value: 20,
-                  density: {
-                    enable: true
-                  }
-                },
-                line_linked: {
-                  shadow: {
-                    enable: true,
-                    color: "#f3f3f3",
-                    blur: 5
-                  }
-                },
-                move: {
-                  enable: true,
-                  speed: 4,
-                  random: true
-                }
-              }
-            }}
-            style={{
-              width: "100%",
-              height: "100%",
-              position: "absolute",
-              top: 0
-            }}
-          />
-        </div>
-        <div className="container">
-          {/* <div className="columns">
+          <div className="container">
+            {/* <div className="columns">
             <div className="column section">
               <p className="is-size-5">{description}</p>
             </div>
           </div> */}
-          <div className="flex-center columns flex-column center">
-            {platform === "Web app" ? (
-              <DemoiMac demoImage={demoImage} />
-            ) : (
-              <DemoiPhone demoImage={demoImage} />
-            )}
-            <div className="column project-description">
-              <p className="is-size-5">{description}</p>
+            <div className="flex-center columns flex-column center">
+              {platform === 'Web app' ? (
+                <DemoiMac demoImage={demoImage} />
+              ) : (
+                <DemoiPhone demoImage={demoImage} />
+              )}
+              <div className="column project-description">
+                <p className="is-size-5">{description}</p>
+              </div>
+              <div className="column">
+                <h2>Year</h2>
+                <span>{date}</span>
+              </div>
+              <div className="column">
+                <h2>Responsibilty</h2>
+                <span>{role}</span>
+              </div>
+              <div className="column content-wrapper">
+                <ProjectContent content={content} />
+              </div>
             </div>
-            <div className="column">
-              <h2>Year</h2>
-              <span>{date}</span>
+            <div className="center" style={{ padding: 0, margin: 0 }}>
+              <h2>Demo:</h2>
+              {/* <GoDown /> */}
             </div>
-            <div className="column">
-              <h2>Responsibilty</h2>
-              <span>{role}</span>
+            <div className="center flex-around">
+              <GoBack />
+              <a href={projectLink} target="_blank">
+                <ReactSVG
+                  path={projectImage}
+                  className="projects-svg"
+                  evalScript="always"
+                  style={{ height: 160, width: 160, padding: 24 }}
+                />
+              </a>
+              <GoTo link={next} />
             </div>
-            <div className="column content-wrapper">
-              <ProjectContent content={content} />
-            </div>
-          </div>
-          <div className="center" style={{ padding: 0, margin: 0 }}>
-            <h2>Demo:</h2>
-            {/* <GoDown /> */}
-          </div>
-          <div className="center flex-around">
-            <GoBack />
-            <a href={projectLink} target="_blank">
-              <ReactSVG
-                path={projectImage}
-                className="projects-svg"
-                evalScript="always"
-                style={{ height: 160, width: 160, padding: 24 }}
-              />
-            </a>
-            <GoTo link={next} />
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </section>
+    </Layout>
+  )
+}
 
 export default ({ data }) => {
-  const { markdownRemark: post } = data;
+  const { markdownRemark: post } = data
+  console.log(data)
   return (
     <ProjectTemplate
       content={post.html}
@@ -145,16 +113,18 @@ export default ({ data }) => {
       role={post.frontmatter.role}
       projectLink={post.frontmatter.link}
       projectPath={post.frontmatter.post}
-      projectImage={post.frontmatter.image}
-      demoImage={post.frontmatter.demoImage}
+      projectImage={post.frontmatter.image.publicURL}
+      demoImage={
+        post.frontmatter.demoImage && post.frontmatter.demoImage.publicURL
+      }
       platform={post.frontmatter.platform}
     />
-  );
-};
+  )
+}
 
 export const projectQuery = graphql`
-  query ProjectByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query ProjectByPath($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         path
@@ -167,10 +137,14 @@ export const projectQuery = graphql`
         class
         role
         link
-        image
-        demoImage
+        image {
+          publicURL
+        }
+        demoImage {
+          publicURL
+        }
         platform
       }
     }
   }
-`;
+`

@@ -1,48 +1,47 @@
-import React, { Component } from "react";
-import Link from "gatsby-link";
-import { withRouter } from "react-router-dom";
-import Media from "react-media";
-import Menu from "./Menu";
-import logo from "../img/logo.svg";
-import Logo from "./Logo";
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import Media from 'react-media'
+import Menu from './Menu'
+// import logo from '../img/logo.svg'
+import Logo from './Logo'
 
-class NavBar extends Component {
+class Navbar extends Component {
   constructor(props) {
-    super(props);
-    this.toggleMenu = this.toggleMenu.bind(this);
+    super(props)
+    this.toggleMenu = this.toggleMenu.bind(this)
   }
   toggleMenu() {
-    this.props.toggleMenu();
+    this.props.toggleMenu()
   }
   render() {
     const {
       location: { pathname },
-      menu
-    } = this.props;
-    let navColor = "is-light";
-    let navPosition = "relative";
-    let linkColor = "#075dff";
-    let linkClass = "children";
-    let logoDimensions = 48;
+    } = window
+    let navColor = 'is-light'
+    let navPosition = 'relative'
+    let linkColor = '#075dff'
+    let linkClass = 'children'
+    let logoDimensions = 48
     let logoStyle = {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100%"
-    };
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100%',
+    }
 
-    linkClass = "main";
-    linkColor = "#fff";
+    linkClass = 'main'
+    linkColor = '#fff'
     if (
-      pathname === "/blog" ||
-      pathname === "/bio" ||
-      pathname === "/projects"
+      pathname.includes('/blog') ||
+      pathname === '/bio' ||
+      pathname === '/projects' ||
+      pathname.includes('/tags')
     ) {
-      navColor = "is-primary";
+      navColor = 'is-primary'
       // logoDimensions = 64;
     }
-    if (pathname === "/" || pathname.includes("/projects/")) {
-      navPosition = "absolute";
+    if (pathname === '/' || pathname.includes('/projects/')) {
+      navPosition = 'absolute'
     }
 
     return (
@@ -99,19 +98,19 @@ class NavBar extends Component {
                 <Logo
                   width={logoDimensions}
                   height={logoDimensions}
-                  color={"#075dff"}
+                  color={'#075dff'}
                 />
               </Link>
             </div>
             <div className="nav-center column" />
             <div className="nav-right column">
-              <Menu toggleMenu={this.toggleMenu} menu={menu} />
+              <Menu toggleMenu={this.toggleMenu} />
             </div>
           </div>
         </Media>
       </nav>
-    );
+    )
   }
 }
 
-export default withRouter(NavBar);
+export default Navbar

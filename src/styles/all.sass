@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito)
 @import "~bulma/sass/utilities/initial-variables"
 @import "./hex.scss"
 @import "./svg.scss"
@@ -13,8 +12,46 @@
 @import "./iPhone.scss"
 @import "./iMac.scss"
 
+
+@font-face
+  font-family: thunder
+  font-display: auto
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/507450/thunder-z.ttf)
+
+@font-face
+  font-family: againts
+  font-display: auto
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/507450/againts.otf)
+
+@font-face
+  font-family: 'Cereal'
+  src: url('../../static/fonts/Cereal_W_Lt.woff2')
+  font-weight: lighter
+  font-style: normal
+
+@font-face
+  font-family: 'Cereal'
+  src: url('../../static/fonts/Cereal_W_Md.woff2')
+  font-weight: normal
+  font-style: italic
+
+@font-face
+  font-family: 'Cereal'
+  src: url('../../static/fonts/Cereal_W_Bd.woff2')
+  font-weight: bold
+  font-style: normal
+
+@font-face
+  font-family: 'Cereal'
+  src: url('../../static/fonts/Cereal_W_Bk.woff2')
+  font-weight: bolder
+  font-style: italic
+
 html body
-  font-family: 'Nunito', sans-serif
+  font-family: "Cereal", "Arial", sans-serif !important
+  font-display: auto
+  line-height: 1.4
+  font-weight: 500
 
 @media (hover: hover)
   a.navbar-item:hover
@@ -35,6 +72,8 @@ a:focus
   justify-content: center
   align-items: center
 
+.mt-60
+  margin-top: 60px
 .flex-center
   display: flex
   justify-content: center

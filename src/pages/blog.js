@@ -1,57 +1,114 @@
-import React from "react";
-import Link from "gatsby-link";
+import React from 'react'
+import Link from 'gatsby-link'
+import { css } from 'emotion'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Layout from '../components/Layout'
+
+const styles = {
+  container: {
+    marginTop: 44,
+    padding: 16,
+  },
+  image: {
+    maxWidth: 240,
+    marginBottom: 4,
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    paddingRight: 8,
+  },
+  wrapper: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gridGap: 16,
+  },
+  block: {
+    // width: 360,
+    // height: 420,
+    // border: '1px solid rgb(234, 236, 238)',
+    padding: '2em 2em 2em 0',
+  },
+  date: {
+    fontSize: 12,
+    color: '#02081A',
+    fontWeight: 'bold',
+  },
+  description: {
+    marginTop: 16,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 2,
+  },
+}
 
 export default class BlogPage extends React.Component {
   render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
+    const { data } = this.props
+    const {
+      allMarkdownRemark: { edges: posts },
+      navbarData,
+      footerData,
+    } = data
+
     return (
-      <section className="section">
-        <div className="container blog-container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Blog</h1>
-          </div>
-          {posts
-            .filter(post => post.node.frontmatter.templateKey === "blog-post")
-            .map(({ node: post }) => {
-              return (
-                <div
-                  className="content"
-                  style={{ border: "1px solid #eaecee", padding: "2em 4em" }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link
-                      className="has-text-primary"
-                      to={post.frontmatter.path}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link
-                      className="button is-small"
-                      to={post.frontmatter.path}
-                    >
-                      Keep Reading →
-                    </Link>
-                  </p>
+      <Layout footerData={footerData} navbarData={navbarData}>
+        <section className={css(styles.container)}>
+          <div className="container content">
+            <div className="column is-10 is-offset-1">
+              <div className="columns">
+                <div className="container blog-container">
+                  <div className="content">
+                    <h1 className="has-text-weight-bold is-size-2">Blog</h1>
+                  </div>
+                  <div className={css(styles.wrapper)}>
+                    {posts
+                      .filter(
+                        post =>
+                          post.node.frontmatter.templateKey === 'blog-post'
+                      )
+                      .map(({ node: post }) => {
+                        return (
+                          <div key={post.id} className={css(styles.block)}>
+                            <Link to={`blog/${post.frontmatter.path}`}>
+                              <PreviewCompatibleImage
+                                style={styles.image}
+                                imageInfo={post.frontmatter.thumbnail}
+                              />
+                            </Link>
+                            <Link
+                              className={css(styles.title)}
+                              to={`blog/${post.frontmatter.path}`}
+                            >
+                              {post.frontmatter.title}
+                            </Link>
+                            <br />
+                            <span className={css(styles.date)}>
+                              {post.frontmatter.date}
+                            </span>
+                            <br />
+                            <div className={css(styles.description)}>
+                              {post.frontmatter.description}
+                            </div>
+                          </div>
+                        )
+                      })}
+                  </div>
                 </div>
-              );
-            })}
-        </div>
-      </section>
-    );
+              </div>
+            </div>
+          </div>
+        </section>
+      </Layout>
+    )
   }
 }
 
 export const pageQuery = graphql`
   query BlogQuery {
+    ...LayoutFragment
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
@@ -61,10 +118,18 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            description
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 300, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             path
           }
         }
       }
     }
   }
-`;
+`

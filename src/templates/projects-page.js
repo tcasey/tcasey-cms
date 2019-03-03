@@ -1,7 +1,6 @@
-import React from "react";
-import Projects from "../components/Projects";
-import Testimonials from "../components/Testimonials";
-import Pricing from "../components/Pricing";
+import React from 'react'
+import Projects from '../components/Projects'
+import Layout from '../components/Layout'
 
 export const ProjectPageTemplate = ({
   image,
@@ -9,24 +8,26 @@ export const ProjectPageTemplate = ({
   description,
   intro,
   main,
-  testimonials
+  testimonials,
 }) => {
   return (
-    <section className="section section--gradient">
-      <div className="container projects-container">
-        <div className="content">
-          <h1 className="has-text-weight-bold is-size-2">{title}</h1>
+    <Layout>
+      <section className="section section--gradient mt-60">
+        <div className="container projects-container">
+          <div className="content">
+            <h1 className="has-text-weight-bold is-size-2">{title}</h1>
+          </div>
+          <div className="content">
+            <Projects gridItems={intro.goodies} />
+          </div>
         </div>
-        <div className="content">
-          <Projects gridItems={intro.goodies} />
-        </div>
-      </div>
-    </section>
-  );
-};
+      </section>
+    </Layout>
+  )
+}
 
 export default ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  const { frontmatter } = data.markdownRemark
   return (
     <ProjectPageTemplate
       image={frontmatter.image}
@@ -36,20 +37,28 @@ export default ({ data }) => {
       main={frontmatter.main}
       testimonials={frontmatter.testimonials}
     />
-  );
-};
+  )
+}
 
 export const projectPageQuery = graphql`
-  query ProjectPage($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query ProjectPage($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
         path
-        image
+        image {
+          childImageSharp {
+            fluid(maxWidth: 400, quality: 92) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         description
         intro {
           goodies {
-            image
+            image {
+              publicURL
+            }
             title
             year
             role
@@ -63,4 +72,4 @@ export const projectPageQuery = graphql`
       }
     }
   }
-`;
+`
