@@ -1,7 +1,24 @@
 import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
+import { css } from 'emotion'
 import ReactSVG from 'react-svg'
 
+const styles = {
+  title: {
+    fontSize: 24,
+  },
+  role: {
+    fontSize: 14,
+    textTransform: 'uppercase',
+    marginBottom: 2,
+    fontWeight: 600,
+  },
+  year: {
+    fontSize: 12,
+    fontWeight: 800,
+  },
+}
+// className={css(styles.container)}
 export default class ProjectGrid extends Component {
   render() {
     const smallStyle = this.props.smallio
@@ -28,15 +45,15 @@ export default class ProjectGrid extends Component {
                 }}
               >
                 <div className="project-text">
-                  <div style={{ fontSize: 'x-large' }}>
-                    {item.title || 'project'}
-                  </div>
-                  <div style={{ fontSize: 'small' }}>
+                  <span className={css(styles.role)}>
                     {item.role || 'All the Things'}
-                  </div>
-                  <div style={{ fontSize: 'small' }}>
+                  </span>
+                  <span className={css(styles.title)}>
+                    {item.title || 'project'}
+                  </span>
+                  <span className={css(styles.year)}>
                     Produced in {item.year || 'NaN'}.
-                  </div>
+                  </span>
                 </div>
                 <div
                   style={{

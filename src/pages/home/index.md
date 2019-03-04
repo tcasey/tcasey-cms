@@ -1,6 +1,7 @@
 ---
 templateKey: home-page
 title: Home
+slug:
 hero:
   button: 253.509.5520
   image: /img/hero_image.jpg

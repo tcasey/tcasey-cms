@@ -35,17 +35,11 @@ class Navbar extends Component {
 
     linkClass = 'main'
     linkColor = '#fff'
-    if (
-      this.pathname.includes('/blog') ||
-      this.pathname === '/bio' ||
-      this.pathname === '/projects' ||
-      this.pathname.includes('/tags')
-    ) {
-      navColor = 'is-primary'
-      // logoDimensions = 64;
-    }
     if (this.pathname === '/' || this.pathname.includes('/projects/')) {
       navPosition = 'absolute'
+      navColor = 'is-light'
+    } else {
+      navColor = 'is-primary'
     }
 
     return (

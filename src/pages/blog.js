@@ -6,11 +6,11 @@ import Layout from '../components/Layout'
 
 const styles = {
   container: {
-    marginTop: 44,
-    padding: 16,
+    padding: '3rem 1.5rem',
   },
   image: {
-    maxWidth: 240,
+    width: 240,
+    height: 215,
     marginBottom: 4,
   },
   title: {
@@ -24,9 +24,6 @@ const styles = {
     gridGap: 16,
   },
   block: {
-    // width: 360,
-    // height: 420,
-    // border: '1px solid rgb(234, 236, 238)',
     padding: '2em 2em 2em 0',
   },
   date: {
@@ -47,11 +44,7 @@ const styles = {
 export default class BlogPage extends React.Component {
   render() {
     const { data } = this.props
-    const {
-      allMarkdownRemark: { edges: posts },
-      navbarData,
-      footerData,
-    } = data
+    const { navbarData, footerData, blogData } = data
 
     return (
       <Layout footerData={footerData} navbarData={navbarData}>
@@ -64,37 +57,32 @@ export default class BlogPage extends React.Component {
                     <h1 className="has-text-weight-bold is-size-2">Blog</h1>
                   </div>
                   <div className={css(styles.wrapper)}>
-                    {posts
-                      .filter(
-                        post =>
-                          post.node.frontmatter.templateKey === 'blog-post'
-                      )
-                      .map(({ node: post }) => {
-                        return (
-                          <div key={post.id} className={css(styles.block)}>
-                            <Link to={`blog/${post.frontmatter.path}`}>
-                              <PreviewCompatibleImage
-                                style={styles.image}
-                                imageInfo={post.frontmatter.thumbnail}
-                              />
-                            </Link>
-                            <Link
-                              className={css(styles.title)}
-                              to={`blog/${post.frontmatter.path}`}
-                            >
-                              {post.frontmatter.title}
-                            </Link>
-                            <br />
-                            <span className={css(styles.date)}>
-                              {post.frontmatter.date}
-                            </span>
-                            <br />
-                            <div className={css(styles.description)}>
-                              {post.frontmatter.description}
-                            </div>
+                    {blogData.edges.map(({ node: post }) => {
+                      return (
+                        <div key={post.id} className={css(styles.block)}>
+                          <Link to={`${post.frontmatter.slug}`}>
+                            <PreviewCompatibleImage
+                              style={styles.image}
+                              imageInfo={post.frontmatter.thumbnail}
+                            />
+                          </Link>
+                          <Link
+                            className={css(styles.title)}
+                            to={`${post.frontmatter.slug}`}
+                          >
+                            {post.frontmatter.title}
+                          </Link>
+                          <br />
+                          <span className={css(styles.date)}>
+                            {post.frontmatter.date}
+                          </span>
+                          <br />
+                          <div className={css(styles.description)}>
+                            {post.frontmatter.description}
                           </div>
-                        )
-                      })}
+                        </div>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
@@ -109,7 +97,10 @@ export default class BlogPage extends React.Component {
 export const pageQuery = graphql`
   query BlogQuery {
     ...LayoutFragment
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    blogData: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 400)
@@ -126,7 +117,7 @@ export const pageQuery = graphql`
                 }
               }
             }
-            path
+            slug
           }
         }
       }

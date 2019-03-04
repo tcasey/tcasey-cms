@@ -16,6 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
+              slug
               tags
               templateKey
             }
@@ -47,20 +48,20 @@ exports.createPages = ({ actions, graphql }) => {
         pathName = '/'
         component = path.resolve(`src/pages/index.js`)
       } else {
-        pathName = edge.node.frontmatter.path || edge.node.fields.slug
+        pathName = `${edge.node.frontmatter.slug}`
         component = path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
         )
       }
 
-      const id = edge.node.id
+      const slug = edge.node.fields.slug
       createPage({
         path: pathName,
         tags: edge.node.frontmatter.tags,
         component,
         // additional data can be passed via context
         context: {
-          id,
+          slug,
         },
       })
     })

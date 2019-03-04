@@ -1,9 +1,11 @@
 ---
 templateKey: about-page
 path: /bio
+slug: bio
 title: Bio
 image: /img/selfie.jpg
 ---
+
 ### How I Came Into Tech
 
 As a kid I would spend hours of each day building things with Legos.

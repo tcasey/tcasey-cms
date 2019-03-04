@@ -1,6 +1,7 @@
 ---
 templateKey: project
-path: /projects/office-quiz
+path: projects/office-quiz
+slug: projects/office-quiz
 title: Office Quiz
 date: 2017-11-17T15:04:10.000Z
 class: offize-quiz
@@ -10,14 +11,14 @@ image: /img/office.svg
 demoImage: /img/office/start.png
 platform: Web app
 color: rgb(68, 138, 255)
-next: /projects/personal-site
+next: projects/personal-site
 headline: Discover your true self.
 description: Finding out which character from The Office you are most like is life changing. You'll obtain a new found passion for the best comedy series in existence as well as a character you can relate to on a new level.
 ---
 
 ## Tools Used
 
-* React
-* Netlify
-* Material Design
-* Figma
+- React
+- Netlify
+- Material Design
+- Figma

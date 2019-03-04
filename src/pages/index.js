@@ -14,7 +14,6 @@ const HomePageTemplate = ({
   testimonials,
   goodies,
 }) => {
-  console.log(intro)
   const data = goodies.filter((i, index) => index < 3)
 
   return (
