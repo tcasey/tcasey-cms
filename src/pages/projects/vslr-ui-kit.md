@@ -1,6 +1,7 @@
 ---
 templateKey: project
-path: /projects/vslr-ui-kit
+path: projects/vslr-ui-kit
+slug: projects/vslr-ui-kit
 title: VSLR UI Kit
 date: 2017-09-26T15:04:10.000Z
 class: vslr-ui-kit
@@ -10,13 +11,13 @@ image: /img/home_energy_app.svg
 demoImage: /img/OSS.png
 platform: iOS & Android app
 color: rgb(255, 130, 0)
-next: /projects/bit-bounti
+next: projects/bit-bounti
 headline: Make open source a priority.
 description: This UI kit was built as a part of a new effort at Vivint Solar.
 ---
 
 ## Tools Used
 
-* React Native
-* Lerna
-* Expo
+- React Native
+- Lerna
+- Expo

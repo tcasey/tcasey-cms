@@ -1,4 +1,4 @@
-@import "./colors.sass";
+@import './colors.sass';
 
 .navbar {
   max-height: 60px !important;
@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 6;
-  background-color: "transparent";
+  background-color: 'transparent';
   margin: 0 !important;
   font-size: 20px;
 }
@@ -31,12 +31,12 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .nav-links .main a:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -52,7 +52,7 @@
 }
 
 .nav-links .children a:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -70,8 +70,8 @@
 .nav-left .name {
   padding-left: 24px;
   width: 100%;
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .mobile-menu .nav-right {
@@ -80,7 +80,7 @@
 }
 
 .navbar svg path {
-  fill: "$tcasey-gray";
+  fill: '$tcasey-gray';
 }
 
 .overlay-menu-disable {
@@ -128,8 +128,12 @@
   color: $tcasey-yellow;
 }
 
+.routes {
+  font-weight: 600;
+}
+
 .routes a:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;

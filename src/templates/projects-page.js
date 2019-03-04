@@ -12,7 +12,7 @@ export const ProjectPageTemplate = ({
 }) => {
   return (
     <Layout>
-      <section className="section section--gradient mt-60">
+      <section className="section section--gradient">
         <div className="container projects-container">
           <div className="content">
             <h1 className="has-text-weight-bold is-size-2">{title}</h1>
@@ -41,8 +41,8 @@ export default ({ data }) => {
 }
 
 export const projectPageQuery = graphql`
-  query ProjectPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query ProjectPage($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
         path

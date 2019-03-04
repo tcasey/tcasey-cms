@@ -97,7 +97,7 @@ export const ProjectTemplate = ({
 
 export default ({ data }) => {
   const { markdownRemark: post } = data
-  console.log(data)
+
   return (
     <ProjectTemplate
       content={post.html}
@@ -123,8 +123,8 @@ export default ({ data }) => {
 }
 
 export const projectQuery = graphql`
-  query ProjectByPath($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query ProjectByPath($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
         path

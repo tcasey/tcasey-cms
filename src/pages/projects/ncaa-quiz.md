@@ -1,6 +1,7 @@
 ---
 templateKey: project
-path: /projects/ncaa-quiz
+path: projects/ncaa-quiz
+slug: projects/ncaa-quiz
 title: NCAA Quiz
 date: 2017-11-17T15:04:10.000Z
 class: ncaa-quiz
@@ -10,15 +11,15 @@ image: /img/ncaa.svg
 demoImage: /img/ncaa/questions.png
 platform: Web app
 color: rgb(9, 91, 165)
-next: /projects/bit-bounti
+next: projects/bit-bounti
 headline: Test your NCAAF knowledge.
 description: Taking quizes helps engrave facts & principles in your mind. Why not take a break from studying/working and quiz yourself on something fun for a change.
 ---
 
 ## Tools Used
 
-* JavaScript
-* jQuery
-* HTML
-* CSS
-* Illustrator
+- JavaScript
+- jQuery
+- HTML
+- CSS
+- Illustrator

@@ -1,8 +1,9 @@
 ---
 templateKey: blog-post
-path: /schedule-a-d3-report
+path: schedule-a-d3-report
 title: Scheduling a D3.js Report
 thumbnail: /img/d3_radar_chart.png
+slug: blog/schedule-a-d3-report
 date: 2016-11-03T15:04:10.000Z
 description: Scheduling a report that is generated using d3 can be tricky, here's a solution I came up with.
 tags:

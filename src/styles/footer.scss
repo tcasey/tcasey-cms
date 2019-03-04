@@ -1,4 +1,4 @@
-@import "./colors.sass";
+@import './colors.sass';
 
 .h1,
 h1 {
@@ -94,7 +94,7 @@ footer .row {
 
 .row::before {
   display: table;
-  content: " ";
+  content: ' ';
 }
 
 @media (max-width: 992px) {
@@ -221,7 +221,7 @@ a {
 }
 
 .footer-rectangle .info a:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -240,7 +240,7 @@ a {
 }
 
 .footer-navbar-nav a:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -286,6 +286,7 @@ footer .footer-bottom .row .footer-logo-wrapper {
   flex-direction: row;
   justify-content: space-around;
   font-size: 20px;
+  font-weight: 600;
 }
 
 .footer-navbar-nav .column {

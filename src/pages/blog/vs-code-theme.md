@@ -1,8 +1,9 @@
 ---
 templateKey: blog-post
-path: /vs-code-theme
+path: vs-code-theme
 title: VS Code Custom Theme
 thumbnail: /img/editor.png
+slug: vs-code-theme
 date: 2018-02-06T04:48:03.105Z
 description: "\nI've been using themes built by other people for a while now and for the most part they've been great. I don't know if it's my inner designer coming out or what but I've finally had enough of all these themes and decided to build one of my own. \U0001F60A"
 tags:

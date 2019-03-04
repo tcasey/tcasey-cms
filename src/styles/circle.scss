@@ -1,4 +1,4 @@
-@import "./colors.sass";
+@import './colors.sass';
 
 .home-header {
   position: relative;
@@ -14,9 +14,14 @@
   -ms-flex-align: center;
   align-items: center;
 }
+.hero {
+  h1 {
+    font-weight: 600;
+  }
+}
 
 .home-header:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -79,7 +84,7 @@
 }
 .hero-circles .circle-1:after,
 .hero-circles .circle-2:after {
-  content: "";
+  content: '';
   display: block;
   padding-top: 100%;
 }
@@ -223,7 +228,7 @@
 }
 
 .db-icon .circle:after {
-  content: "";
+  content: '';
   display: block;
   padding-top: 100%;
 }
