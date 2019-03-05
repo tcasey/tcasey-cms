@@ -12,32 +12,32 @@ export const ProjectPageTemplate = ({
   testimonials,
 }) => {
   return (
-    <Layout>
-      <section className="section section--gradient">
-        <div className="container projects-container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">{title}</h1>
-          </div>
-          <div className="content">
-            <Projects gridItems={intro.goodies} />
-          </div>
+    <section className="section section--gradient">
+      <div className="container projects-container">
+        <div className="content">
+          <h1 className="has-text-weight-bold is-size-2">{title}</h1>
         </div>
-      </section>
-    </Layout>
+        <div className="content">
+          <Projects gridItems={intro.goodies} />
+        </div>
+      </div>
+    </section>
   )
 }
 
 export default ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
-    <ProjectPageTemplate
-      image={frontmatter.image}
-      title={frontmatter.title}
-      description={frontmatter.description}
-      intro={frontmatter.intro}
-      main={frontmatter.main}
-      testimonials={frontmatter.testimonials}
-    />
+    <Layout>
+      <ProjectPageTemplate
+        image={frontmatter.image}
+        title={frontmatter.title}
+        description={frontmatter.description}
+        intro={frontmatter.intro}
+        main={frontmatter.main}
+        testimonials={frontmatter.testimonials}
+      />
+    </Layout>
   )
 }
 
