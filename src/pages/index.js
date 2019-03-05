@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Script from 'react-load-script'
 import ProjectGrid from '../components/Projects'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 
 const HomePageTemplate = ({
-  image,
-  title,
-  description,
-  intro,
-  main,
-  testimonials,
+  // image,
+  // title,
+  // description,
+  // intro,
+  // main,
+  // testimonials,
   goodies,
 }) => {
   const data = goodies.filter((i, index) => index < 3)

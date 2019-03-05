@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import twitter from '../img/twitter.svg'
 import linkedin from '../img/linkedin.svg'
 import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+// import logo from '../img/logo.svg'
 import Logo from '../components/Logo'
 import { Link } from 'gatsby'
 
@@ -25,7 +25,11 @@ class Footer extends Component {
               <div className="info footer-rectangle-left">
                 <p>Let’s talk code</p>
                 <h1>
-                  <a href="https://twitter.com/_tcasey_" target="_blank">
+                  <a
+                    href="https://twitter.com/_tcasey_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     @_tcasey_
                   </a>
                 </h1>

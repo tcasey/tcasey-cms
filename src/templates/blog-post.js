@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { kebabCase } from 'lodash'
+import Helmet from 'react-helmet'
 import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
-import Helmet from 'react-helmet'
 
 export const BlogPostTemplate = ({
   content,
