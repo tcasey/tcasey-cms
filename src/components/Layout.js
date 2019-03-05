@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 
-import { Navbar } from './Navbar'
+import { Navbar } from './NavBar'
 import Overlay from './Overlay'
 // import MobileNavigation from './MobileNavigation'
 import Footer from './Footer'
