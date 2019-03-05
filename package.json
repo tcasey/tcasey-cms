@@ -3,6 +3,9 @@
   "description": "Gatsby and Netlify CMS",
   "version": "2.0.0",
   "author": "tcasey",
+  "engines" : {
+    "node" : ">=8.0.0 <11.0.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "bulma": "^0.7.0",
