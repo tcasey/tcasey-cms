@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 export default class DemoiMac extends Component {
   render() {
-    const { width, height, demoImage } = this.props;
+    const { demoImage } = this.props
 
     return (
       <svg
@@ -12,7 +12,7 @@ export default class DemoiMac extends Component {
         viewBox="160 64 320 338"
         enableBackground="new 160 64 320 338"
         xmlSpace="preserve"
-        style={{ maxWidth: "900px" }}
+        style={{ maxWidth: '900px' }}
       >
         <g>
           <g id="screen-outside">
@@ -62,6 +62,6 @@ export default class DemoiMac extends Component {
         </g>
         <g />
       </svg>
-    );
+    )
   }
 }

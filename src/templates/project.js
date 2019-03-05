@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import ReactSVG from 'react-svg'
 
@@ -78,7 +79,7 @@ export const ProjectTemplate = ({
             </div>
             <div className="center flex-around">
               <GoBack />
-              <a href={projectLink} target="_blank">
+              <a href={projectLink} target="_blank" rel="noopener noreferrer">
                 <ReactSVG
                   path={projectImage}
                   className="projects-svg"

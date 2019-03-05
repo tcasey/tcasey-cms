@@ -6,6 +6,7 @@ class GoBack extends Component {
     return (
       <div className="link">
         <a
+          href="javascript:void(0)"
           onClick={() => {
             window.history.back()
           }}

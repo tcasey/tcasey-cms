@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import { get } from 'lodash'
 import Media from 'react-media'
 import Menu from './Menu'
 // import logo from '../img/logo.svg'
 import Logo from './Logo'
 
-class Navbar extends Component {
+export class NavbarTemplate extends Component {
   constructor(props) {
     super(props)
     this.toggleMenu = this.toggleMenu.bind(this)
@@ -110,5 +111,15 @@ class Navbar extends Component {
     )
   }
 }
+const Navbar = ({ data, menu, toggleMenu }) => {
+  // if (!props.data) {
+  //   return null
+  // }
+  const navbarData = get(data, 'edges[0].node.frontmatter')
 
-export default Navbar
+  return (
+    <NavbarTemplate data={navbarData} menu={menu} toggleMenu={toggleMenu} />
+  )
+}
+
+export { Navbar }
