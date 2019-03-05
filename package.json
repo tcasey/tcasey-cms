@@ -3,8 +3,8 @@
   "description": "Gatsby and Netlify CMS",
   "version": "2.0.0",
   "author": "tcasey",
-  "engines" : {
-    "node" : ">=8.0.0 <11.0.0"
+  "engines": {
+    "node": ">=8.0.0 <11.0.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -60,7 +60,7 @@
     "clean": "rimraf .cache public",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
-    "develop:functions": "./node_modules/.bin/netlify-lambda serve ./src/functions/",
+    "develop:functions": "./node_modules/.bin/netlify-lambda serve ./lambdas/",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
