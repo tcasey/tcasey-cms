@@ -31,7 +31,7 @@ export const AboutPageTemplate = ({
 export default ({ data }) => {
   const { markdownRemark: post } = data
   return (
-    <Layout>
+    <Layout navbarType="is-primary">
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

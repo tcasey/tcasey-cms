@@ -60,7 +60,7 @@ export default class BlogPage extends React.Component {
                     {blogData.edges.map(({ node: post }) => {
                       return (
                         <div key={post.id} className={css(styles.block)}>
-                          <Link to={`${post.frontmatter.slug}`}>
+                          <Link to={`/${post.frontmatter.slug}`}>
                             <PreviewCompatibleImage
                               style={styles.image}
                               imageInfo={post.frontmatter.thumbnail}
@@ -68,7 +68,7 @@ export default class BlogPage extends React.Component {
                           </Link>
                           <Link
                             className={css(styles.title)}
-                            to={`${post.frontmatter.slug}`}
+                            to={`/${post.frontmatter.slug}`}
                           >
                             {post.frontmatter.title}
                           </Link>

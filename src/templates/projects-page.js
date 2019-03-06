@@ -28,7 +28,7 @@ export const ProjectPageTemplate = ({
 export default ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
-    <Layout>
+    <Layout navbarType="is-primary">
       <ProjectPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}

@@ -98,7 +98,7 @@ export default ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout>
+    <Layout navbarType="is-light">
       <ProjectTemplate
         content={post.html}
         contentComponent={HTMLContent}

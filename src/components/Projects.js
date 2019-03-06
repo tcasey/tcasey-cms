@@ -34,7 +34,7 @@ export default class ProjectGrid extends Component {
       <div className="projects">
         {this.props.gridItems.map(item => (
           <article style={smallStyle} key={item.path}>
-            <Link to={item.path}>
+            <Link to={`/${item.path}`}>
               <div
                 className={`content ${item.class}`}
                 style={{

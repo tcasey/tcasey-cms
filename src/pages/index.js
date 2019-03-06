@@ -64,7 +64,7 @@ class HomePage extends Component {
     } = this.props.data.projectData.edges[0].node.frontmatter.intro
     const { scrollY } = this.state
     return (
-      <Layout>
+      <Layout navbarType="is-light">
         <Hero scrollY={scrollY} />
         <div className="container content">
           <div className="container section is-mobile home-container">

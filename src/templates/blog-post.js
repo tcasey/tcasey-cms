@@ -66,7 +66,7 @@ export default ({ data }) => {
   )}`
 
   return (
-    <Layout>
+    <Layout navbarType="is-primary">
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}

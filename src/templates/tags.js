@@ -23,7 +23,11 @@ class TagRoute extends React.Component {
     } tagged with “${tag}”`
 
     return (
-      <Layout navbarData={navbarData} footerData={footerData}>
+      <Layout
+        navbarData={navbarData}
+        footerData={footerData}
+        navbarType="is-primary"
+      >
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
           <div className="container content">

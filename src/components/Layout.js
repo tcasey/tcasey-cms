@@ -21,12 +21,17 @@ class TemplateWrapper extends React.Component {
     this.setState({ menu })
   }
   render() {
-    const { children, navbarData, footerData } = this.props
+    const { children, navbarData, footerData, navbarType } = this.props
     const { menu } = this.state
     return (
       <div>
         <Helmet title="Trevor Casey | JavaScript Developer" />
-        <Navbar data={navbarData} menu={menu} toggleMenu={this.toggleMenu} />
+        <Navbar
+          data={navbarData}
+          menu={menu}
+          toggleMenu={this.toggleMenu}
+          type={navbarType}
+        />
         <Overlay menu={menu} toggleMenu={this.toggleMenu} />
         <main style={{ width: '100vw' }}>{children}</main>
         <Footer data={footerData} />

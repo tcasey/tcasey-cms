@@ -14,7 +14,11 @@ const TagsPage = ({
     footerData,
   },
 }) => (
-  <Layout footerData={footerData} navbarData={navbarData}>
+  <Layout
+    footerData={footerData}
+    navbarData={navbarData}
+    navbarType="is-primary"
+  >
     <section className="section">
       <Helmet title={`Tags | ${title}`} />
       <div className="container content">
