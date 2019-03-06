@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
-import { css } from 'emotion'
 import ReactSVG from 'react-svg'
 
 const styles = {
@@ -45,13 +44,9 @@ export default class ProjectGrid extends Component {
                 }}
               >
                 <div className="project-text">
-                  <span className={css(styles.role)}>
-                    {item.role || 'All the Things'}
-                  </span>
-                  <span className={css(styles.title)}>
-                    {item.title || 'project'}
-                  </span>
-                  <span className={css(styles.year)}>
+                  <span css={styles.role}>{item.role || 'All the Things'}</span>
+                  <span css={styles.title}>{item.title || 'project'}</span>
+                  <span css={styles.year}>
                     Produced in {item.year || 'NaN'}.
                   </span>
                 </div>

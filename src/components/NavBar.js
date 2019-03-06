@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import { get } from 'lodash'
-import Media from 'react-media'
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
+
 import Menu from './Menu'
 // import logo from '../img/logo.svg'
 import Logo from './Logo'
@@ -35,7 +37,14 @@ export class NavbarTemplate extends Component {
         className={`navbar ${navColor} columns`}
         style={{ position: type === 'is-light' ? 'absolute' : 'relative' }}
       >
-        <Media query="(min-width: 1000px)">
+        <div
+          css={css`
+            display: none;
+            @media (min-width: 1000px) {
+              display: block;
+            }
+          `}
+        >
           <div className={`navbar ${navColor} columns full-menu`}>
             <div className="nav-left column">
               <span className="name" style={{ color: linkColor }}>
@@ -76,8 +85,15 @@ export class NavbarTemplate extends Component {
               </ul>
             </div>
           </div>
-        </Media>
-        <Media query="(max-width: 1000px)">
+        </div>
+        <div
+          css={css`
+            display: none;
+            @media (max-width: 1000px) {
+              display: block;
+            }
+          `}
+        >
           <div className="navbar columns is-fixed-top mobile-menu">
             <div className="nav-left column">
               <Link to="/" className="logo-wrapper">
@@ -93,7 +109,7 @@ export class NavbarTemplate extends Component {
               <Menu toggleMenu={this.toggleMenu} />
             </div>
           </div>
-        </Media>
+        </div>
       </nav>
     )
   }

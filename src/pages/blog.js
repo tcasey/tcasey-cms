@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import { css } from 'emotion'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 import Layout from '../components/Layout'
 
@@ -48,7 +47,7 @@ export default class BlogPage extends React.Component {
 
     return (
       <Layout footerData={footerData} navbarData={navbarData}>
-        <section className={css(styles.container)}>
+        <section css={styles.container}>
           <div className="container content">
             <div className="column is-10 is-offset-1">
               <div className="columns">
@@ -56,10 +55,10 @@ export default class BlogPage extends React.Component {
                   <div className="content">
                     <h1 className="has-text-weight-bold is-size-2">Blog</h1>
                   </div>
-                  <div className={css(styles.wrapper)}>
+                  <div css={styles.wrapper}>
                     {blogData.edges.map(({ node: post }) => {
                       return (
-                        <div key={post.id} className={css(styles.block)}>
+                        <div key={post.id} css={styles.block}>
                           <Link to={`/${post.frontmatter.slug}`}>
                             <PreviewCompatibleImage
                               style={styles.image}
@@ -67,17 +66,15 @@ export default class BlogPage extends React.Component {
                             />
                           </Link>
                           <Link
-                            className={css(styles.title)}
+                            css={styles.title}
                             to={`/${post.frontmatter.slug}`}
                           >
                             {post.frontmatter.title}
                           </Link>
                           <br />
-                          <span className={css(styles.date)}>
-                            {post.frontmatter.date}
-                          </span>
+                          <span css={styles.date}>{post.frontmatter.date}</span>
                           <br />
-                          <div className={css(styles.description)}>
+                          <div css={styles.description}>
                             {post.frontmatter.description}
                           </div>
                         </div>
