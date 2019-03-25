@@ -17,7 +17,7 @@ class Footer extends Component {
               <div className="info footer-rectangle-left">
                 <p>Let’s work together</p>
                 <h1>
-                  <a href="mailto:hello@tcasey.me">hello@tcasey.me</a>
+                  <a href="mailto:hi@trevorcasey.dev">hi@trevorcasey.dev</a>
                 </h1>
               </div>
             </div>
@@ -57,7 +57,7 @@ class Footer extends Component {
                   <Link to="/blog/">blog</Link>
                 </li>
                 <li className="column">
-                  <a href="mailto:hello@tcasey.me">contact</a>
+                  <a href="mailto:hi@trevorcasey.dev">contact</a>
                 </li>
               </ul>
             </div>

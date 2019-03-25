@@ -78,7 +78,7 @@ export class NavbarTemplate extends Component {
                   </Link>
                 </li>
                 <li className="main">
-                  <a className="" href="mailto:hello@tcasey.me">
+                  <a className="" href="mailto:hi@trevorcasey.dev">
                     contact
                   </a>
                 </li>

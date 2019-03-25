@@ -38,7 +38,7 @@ export default class Overlay extends Component {
               </Link>
             </li>
             <li className="column routes">
-              <a onClick={this.go} href="mailto:hello@tcasey.me">
+              <a onClick={this.go} href="mailto:hi@trevorcasey.dev">
                 contact
               </a>
             </li>
