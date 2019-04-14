@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
+import { get } from 'lodash'
 import Script from 'react-load-script'
 import ProjectGrid from '../components/Projects'
 import Hero from '../components/Hero'
@@ -58,13 +59,19 @@ class HomePage extends Component {
   }
 
   render() {
-    const { frontmatter } = this.props.data.homePageData.edges[0].node
     const {
-      goodies,
-    } = this.props.data.projectData.edges[0].node.frontmatter.intro
+      data: { footerData, navbarData, homePageData, projectData },
+    } = this.props
+    const { frontmatter } = homePageData.edges[0].node
+    const { goodies } = projectData.edges[0].node.frontmatter.intro
     const { scrollY } = this.state
+
     return (
-      <Layout navbarType="is-light">
+      <Layout
+        navbarType="is-light"
+        footerData={footerData}
+        navbarData={navbarData}
+      >
         <Hero scrollY={scrollY} />
         <div className="container content">
           <div className="container section is-mobile home-container">
@@ -101,6 +108,7 @@ export default HomePage
 
 export const pageQuery = graphql`
   query HomePage {
+    ...LayoutFragment
     ...ProjectFragment
     homePageData: allMarkdownRemark(
       filter: { frontmatter: { templateKey: { eq: "home-page" } } }

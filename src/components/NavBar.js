@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import { get } from 'lodash'
+import MediaQuery from 'react-responsive'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
 import Menu from './Menu'
-// import logo from '../img/logo.svg'
 import Logo from './Logo'
+
+const isActive = ({ isCurrent }) => {
+  return { className: isCurrent ? 'nav-link-active' : 'nav-link-default' }
+}
+
+const NavItem = props => (
+  <li className="nav-links">
+    <Link {...props} getProps={isActive} />
+  </li>
+)
 
 export class NavbarTemplate extends Component {
   static defaultProps = {
@@ -31,86 +41,74 @@ export class NavbarTemplate extends Component {
       alignItems: 'center',
       height: '100%',
     }
+    const menuItems = get(this.props, 'data.menuItems')
 
     return (
-      <nav
-        className={`navbar ${navColor} columns`}
-        style={{ position: type === 'is-light' ? 'absolute' : 'relative' }}
-      >
-        <div
-          css={css`
-            display: none;
-            @media (min-width: 1000px) {
-              display: block;
-            }
-          `}
+      <MediaQuery query="(min-width: 800px)">
+        <nav
+          className={`navbar ${navColor} columns`}
+          style={{ position: type === 'is-light' ? 'absolute' : 'relative' }}
         >
-          <div className={`navbar ${navColor} columns full-menu`}>
-            <div className="nav-left column">
-              <span className="name" style={{ color: linkColor }}>
-                Trevor Casey
-              </span>
-            </div>
-            <div className="nav-center column">
-              <Link to="/" className="logo-wrapper" style={logoStyle}>
-                <Logo
-                  width={logoDimensions}
-                  height={logoDimensions}
-                  color={linkColor}
-                />
-              </Link>
-            </div>
-            <div className={`nav-right column main-wrapper`}>
-              <ul className="nav-links">
-                <li className="main">
-                  <Link className="" to="/bio">
-                    bio
-                  </Link>
-                </li>
-                <li className="main">
-                  <Link className="" to="/projects">
-                    projects
-                  </Link>
-                </li>
-                <li className="main">
-                  <Link className="" to="/blog">
-                    blog
-                  </Link>
-                </li>
-                <li className="main">
-                  <a className="" href="mailto:hi@trevorcasey.dev">
-                    contact
-                  </a>
-                </li>
-              </ul>
+          <div>
+            <div className={`navbar ${navColor} columns full-menu`}>
+              <div className="nav-left column">
+                <Link to="/">
+                  <span className="name" style={{ color: linkColor }}>
+                    Trevor Casey
+                  </span>
+                </Link>
+              </div>
+              <div className="nav-center column">
+                <Link to="/" className="logo-wrapper" style={logoStyle}>
+                  <Logo
+                    width={logoDimensions}
+                    height={logoDimensions}
+                    color={linkColor}
+                  />
+                </Link>
+              </div>
+              <div className={`nav-right column main-wrapper`}>
+                <ul className="nav-links">
+                  {menuItems &&
+                    menuItems.map(
+                      ({ label, linkURL, linkIcon = 'home', linkType }) => {
+                        if (label === 'Home') {
+                          return null
+                        }
+                        if (linkType === 'internal') {
+                          return (
+                            <NavItem
+                              key={`${linkIcon}-${linkURL}`}
+                              to={linkURL}
+                            >
+                              {label.toLocaleLowerCase()}
+                            </NavItem>
+                          )
+                        } else {
+                          return (
+                            <li className="nav-links">
+                              <a
+                                key={`${linkIcon}-${linkURL}`}
+                                href={linkURL}
+                                className={
+                                  this.props.isCurrent
+                                    ? 'nav-link-active'
+                                    : 'nav-link-default'
+                                }
+                              >
+                                {label.toLocaleLowerCase()}
+                              </a>
+                            </li>
+                          )
+                        }
+                      }
+                    )}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          css={css`
-            display: none;
-            @media (max-width: 1000px) {
-              display: block;
-            }
-          `}
-        >
-          <div className="navbar columns is-fixed-top mobile-menu">
-            <div className="nav-left column">
-              <Link to="/" className="logo-wrapper">
-                <Logo
-                  width={logoDimensions}
-                  height={logoDimensions}
-                  color={logoColor}
-                />
-              </Link>
-            </div>
-            <div className="nav-center column" />
-            <div className="nav-right column">
-              <Menu toggleMenu={this.toggleMenu} />
-            </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </MediaQuery>
     )
   }
 }
