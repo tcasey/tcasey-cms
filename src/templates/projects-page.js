@@ -27,8 +27,13 @@ export const ProjectPageTemplate = ({
 
 export default ({ data }) => {
   const { frontmatter } = data.markdownRemark
+  const { footerData, navbarData } = data
   return (
-    <Layout navbarType="is-primary">
+    <Layout
+      navbarType="is-primary"
+      footerData={footerData}
+      navbarData={navbarData}
+    >
       <ProjectPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -43,6 +48,7 @@ export default ({ data }) => {
 
 export const projectPageQuery = graphql`
   query ProjectPage($slug: String!) {
+    ...LayoutFragment
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title

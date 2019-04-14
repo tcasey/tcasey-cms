@@ -54,7 +54,7 @@ export default TagRoute
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {
-    # ...LayoutFragment
+    ...LayoutFragment
     site {
       siteMetadata {
         title

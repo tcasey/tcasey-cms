@@ -59,14 +59,18 @@ export const BlogPostTemplate = ({
 }
 
 export default ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post, footerData, navbarData } = data
   const { slug } = post.frontmatter
   const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `https://www.tcasey.me/${slug}`
   )}`
 
   return (
-    <Layout navbarType="is-primary">
+    <Layout
+      navbarType="is-primary"
+      footerData={footerData}
+      navbarData={navbarData}
+    >
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -83,6 +87,7 @@ export default ({ data }) => {
 
 export const blogPageQuery = graphql`
   query BlogPostByPath($slug: String!) {
+    ...LayoutFragment
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

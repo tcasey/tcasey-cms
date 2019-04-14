@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 
 import { Navbar } from './NavBar'
 import Overlay from './Overlay'
-// import MobileNavigation from './MobileNavigation'
+import MobileNavigation from './MobileNavigation'
 import Footer from './Footer'
 import '../styles/all.sass'
 
@@ -35,7 +35,7 @@ class TemplateWrapper extends React.Component {
         <Overlay menu={menu} toggleMenu={this.toggleMenu} />
         <main style={{ width: '100vw' }}>{children}</main>
         <Footer data={footerData} />
-        {/* <MobileNavigation data={navbarData} /> */}
+        <MobileNavigation data={navbarData} />
       </div>
     )
   }

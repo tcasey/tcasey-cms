@@ -67,10 +67,51 @@ html body
   font-weight: 500
 
 @media (hover: hover)
-  a.navbar-item:hover
+  a.navbar-item:hover,
+  a.mobile-link-default:hover,
+  a.mobile-link-active:hover
     color: $tcasey-blue !important
 a:focus
   color: $tcasey-blue
+
+.mobile-link-active
+  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 4%
+  padding-bottom: env(safe-area-inset-bottom)
+  height: 100%
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s
+  background-color: rgb(255, 255, 255)
+  color: #075dff
+  font-weight: 600
+  svg
+    fill: #075dff
+
+.mobile-link-default
+  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  padding: 4%
+  padding-bottom: env(safe-area-inset-bottom)
+  height: 100%
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s
+  background-color: rgb(255, 255, 255)
+  color: #075dff
+  font-weight: 500
+  svg
+    fill: #075dff
+
+.nav-link-default
+  width: 80px
+
+.home-header h1
+  font-weight: 700
+
 // Helper Classes
 .full-width-image-container
   width: 100vw

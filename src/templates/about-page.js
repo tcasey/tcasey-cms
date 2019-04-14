@@ -30,8 +30,13 @@ export const AboutPageTemplate = ({
 
 export default ({ data }) => {
   const { markdownRemark: post } = data
+  const { footerData, navbarData } = data
   return (
-    <Layout navbarType="is-primary">
+    <Layout
+      navbarType="is-primary"
+      footerData={footerData}
+      navbarData={navbarData}
+    >
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
@@ -44,6 +49,7 @@ export default ({ data }) => {
 
 export const aboutPageQuery = graphql`
   query AboutPage($slug: String!) {
+    ...LayoutFragment
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

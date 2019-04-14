@@ -1,16 +1,24 @@
 ---
 templateKey: navbar
 menuItems:
-  - label: Home
+  - label: home
     linkType: internal
     linkURL: /
     linkIcon: home
-  - label: Projects
+  - label: projects
     linkType: internal
-    linkURL: /projects
-    linkIcon: environmentalist
-  - label: Bio
+    linkURL: projects
+    linkIcon: devices2
+  - label: bio
     linkType: internal
-    linkURL: /bio
-    linkIcon: manBeard
+    linkURL: bio
+    linkIcon: beard
+  - label: blog
+    linkType: internal
+    linkURL: blog
+    linkIcon: quill
+  - label: contact
+    linkType: external
+    linkURL: mailto:hi@trevorcasey.dev
+    linkIcon: send
 ---

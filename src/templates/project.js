@@ -96,9 +96,14 @@ export const ProjectTemplate = ({
 
 export default ({ data }) => {
   const { markdownRemark: post } = data
+  const { footerData, navbarData } = data
 
   return (
-    <Layout navbarType="is-light">
+    <Layout
+      navbarType="is-light"
+      footerData={footerData}
+      navbarData={navbarData}
+    >
       <ProjectTemplate
         content={post.html}
         contentComponent={HTMLContent}
@@ -125,6 +130,7 @@ export default ({ data }) => {
 
 export const projectQuery = graphql`
   query ProjectByPath($slug: String!) {
+    ...LayoutFragment
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

@@ -10,14 +10,19 @@
   margin: 0 !important;
   font-size: 20px;
 }
-.nav-links .main,
+.nav-links {
+  // width: 80px;
+  margin-right: 16px;
+}
+
+.nav-links .nav-links,
 .nav-links .children {
   position: relative;
 }
 .nav-links .children-wrapper {
   max-width: 400px;
 }
-.nav-links .main a {
+.nav-links .nav-links a {
   color: $tcasey-gray;
 }
 .nav-right .nav-links .children a {
@@ -35,7 +40,7 @@
   font-weight: 600;
 }
 
-.nav-links .main a:after {
+.nav-links .nav-links a:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -46,7 +51,7 @@
 }
 
 @media (hover: hover) {
-  .nav-links .main a:hover:after {
+  .nav-links .nav-links a:hover:after {
     width: 100%;
   }
 }
