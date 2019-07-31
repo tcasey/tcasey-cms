@@ -6,7 +6,7 @@ title: GH Modern
 date: 2019-01-26T15:04:10.000Z
 class: gh-modern
 role: Development / Design
-link: https://expo.io/@tcasey/gh-modern
+link: https://expo.io/@tcasey/ghmodern
 image: /img/gh-modern.svg
 demoImage: /img/gh-modern2.png
 platform: iOS & Android app
