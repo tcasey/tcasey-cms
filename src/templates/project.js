@@ -37,7 +37,7 @@ export const ProjectTemplate = ({
           className="project-background content"
           style={{ backgroundColor: color }}
         >
-          <div className="container section top project-container">
+          <div className="section top project-container">
             <h1 className="has-text-weight-bold is-size-1">{title}</h1>
             <h2 className="subtitle has-text-weight-bold is-size-5">
               {headline}

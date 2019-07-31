@@ -10,12 +10,14 @@ const styles = {
   image: {
     width: 240,
     height: 215,
-    marginBottom: 4,
+    // marginBottom: 4,
   },
   title: {
     fontWeight: 'bold',
     fontSize: 16,
     paddingRight: 8,
+    position: 'absolute',
+    paddingTop: 4
   },
   wrapper: {
     display: 'grid',
@@ -49,7 +51,7 @@ export default class BlogPage extends React.Component {
       <Layout footerData={footerData} navbarData={navbarData}>
         <section css={styles.container}>
           <div className="container content">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-10">
               <div className="columns">
                 <div className="container blog-container">
                   <div className="content">

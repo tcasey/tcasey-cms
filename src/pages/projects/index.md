@@ -10,104 +10,143 @@ description: >-
 intro:
   goodies:
     - image: /img/bit_bounti.svg
+      thumbnail: /img/rainierpest.png
+      title: Rainier Pest Control
+      year: 2019
+      role: Development / Design
+      headline: Protect your home and your piece of mind
+      path: projects/rainier-pest
+      slug: projects/rainier-pest
+      class: rainier-pest
+      color: rgb(0, 122, 255)
+      next: projects/bit-bounti
+    - image: /img/bit_bounti.svg
+      thumbnail: /img/bitbounti_web.png
       title: BitBounti
       year: 2018
       role: Development
+      headline: Profit off your own data
       path: projects/bit-bounti
       slug: projects/bit-bounti
       class: bit-bounti
       color: rgb(0, 122, 255)
-      next: projects/big-ledger
-    - image: /img/big_ledger.svg
-      title: Big Ledger
-      year: 2017
+      next: projects/gh-modern
+    - image: /img/gh-modern.svg
+      thumbnail: /img/gh-modern.png
+      title: GH Modern
+      year: 2018
       role: Development / Design
-      path: projects/big-ledger
-      slug: projects/big-ledger
-      class: big-ledger
-      color: rgb(5, 117, 230)
-      next: projects/pip
+      headline: Making mobile Github actually useful for once
+      path: projects/gh-modern
+      slug: projects/gh-modern
+      class: gh-modern
+      color: rgb(141, 19, 254)
+      next: projects/personal-site
+    # - image: /img/big_ledger.svg
+    #   title: Big Ledger
+    #   year: 2017
+    #   role: Development / Design
+    # headline: Move fast and break things
+    #   path: projects/big-ledger
+    #   slug: projects/big-ledger
+    #   class: big-ledger
+    #   color: rgb(5, 117, 230)
+    #   next: projects/pip
     - image: /img/pip.svg
+      thumbnail: /img/pip.png
       title: Pay With Pip
       year: 2017
       role: Development / Design
+      headline: The complexity of recurring billing - simplified
       path: projects/pip
       slug: projects/pip
       class: pip
       color: rgb(99, 229, 187)
       next: projects/home-energy-app
     - image: /img/home_energy_app.svg
+      thumbnail: /img/HEMA.png
       title: Home Energy App
       year: 2017
       role: Development
+      headline: Save the planet & enjoy doing it
       path: projects/home-energy-app
       slug: projects/home-energy-app
       class: home-energy-app
       color: rgb(255, 130, 0)
       next: projects/office-quiz
+    - image: /img/nerd.svg
+      thumbnail: /img/tcasey_me.png
+      title: Portfolio Site
+      year: 2016
+      role: Development / Design
+      headline: Build it and they will come. A lot of the inspiration for this was from apple.com circa 2015.
+      path: projects/personal-site
+      slug: projects/personal-site
+      class: personal-site
+      color: rgb(143, 185, 255)
+      next: projects/pip
     - image: /img/office.svg
+      thumbnail: /img/office/quiz.png
       title: Office Quiz
       year: 2016
       role: Development / Design
+      headline: Discover your true self thanks to the arguably best comedy on TV, The Office
       path: projects/office-quiz
       slug: projects/office-quiz
       class: office-quiz
       color: rgb(68, 138, 255)
       next: projects/personal-site
-    - image: /img/nerd.svg
-      title: Portfolio Site
-      year: 2016
-      role: Development / Design
-      path: projects/personal-site
-      slug: projects/personal-site
-      class: personal-site
-      color: rgb(143, 185, 255)
-      next: projects/pre-course-tracker
     - image: /img/pre_course.svg
+      thumbnail: /img/pre-course/radar.png
       title: Pre Course Tracker
       year: 2016
       role: Development / Design
+      headline: Assessing students, improves their learning
       path: projects/pre-course-tracker
       slug: projects/pre-course-tracker
       class: pre-course
       color: rgb(64, 107, 178)
       next: projects/etsy-bike
-    - image: /img/bike.svg
-      title: All About Road Bikes
-      year: 2015
-      role: Development / Design
-      path: projects/etsy-bike
-      slug: projects/etsy-bike
-      class: etsy-bike
-      color: rgb(245, 100, 0)
-      next: projects/memory-game
-    - image: /img/memory.svg
-      title: Memory Game
-      year: 2015
-      role: Development / Design
-      path: projects/memory-game
-      slug: projects/memory-game
-      class: memory-game
-      color: rgb(135, 169, 178)
-      next: projects/hot-cold
-    - image: /img/cold.svg
-      title: Hot & Cold Game
-      year: 2015
-      role: Development / Design
-      path: projects/hot-cold-game
-      slug: projects/hot-cold-game
-      class: hot-cold
-      color: rgb(255, 34, 34)
-      next: projects/ncaa-quiz
-    - image: /img/ncaa.svg
-      title: NCAA Quiz
-      year: 2015
-      role: Development / Design
-      path: projects/ncaa-quiz
-      slug: projects/ncaa-quiz
-      class: ncaa-quiz
-      color: rgb(9, 91, 165)
-      next: projects/bit-bounti
+    # - image: /img/bike.svg
+    #   title: All About Road Bikes
+    #   year: 2015
+    #   role: Development / Design
+    # headline: Move fast and break things
+    #   path: projects/etsy-bike
+    #   slug: projects/etsy-bike
+    #   class: etsy-bike
+    #   color: rgb(245, 100, 0)
+    #   next: projects/memory-game
+    # - image: /img/memory.svg
+    #   title: Memory Game
+    #   year: 2015
+    #   role: Development / Design
+    # headline: Move fast and break things
+    #   path: projects/memory-game
+    #   slug: projects/memory-game
+    #   class: memory-game
+    #   color: rgb(135, 169, 178)
+    #   next: projects/hot-cold
+    # - image: /img/cold.svg
+    #   title: Hot & Cold Game
+    #   year: 2015
+    #   role: Development / Design
+    # headline: Move fast and break things
+    #   path: projects/hot-cold-game
+    #   slug: projects/hot-cold-game
+    #   class: hot-cold
+    #   color: rgb(255, 34, 34)
+    #   next: projects/ncaa-quiz
+    # - image: /img/ncaa.svg
+    #   title: NCAA Quiz
+    #   year: 2015
+    #   role: Development / Design
+    # headline: Move fast and break things
+    #   path: projects/ncaa-quiz
+    #   slug: projects/ncaa-quiz
+    #   class: ncaa-quiz
+    #   color: rgb(9, 91, 165)
+    #   next: projects/bit-bounti
   heading: Portfolio Pieces
   description: >
     Intro description yada yada yada
