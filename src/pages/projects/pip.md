@@ -8,7 +8,7 @@ class: pip
 role: Development / Design
 link: https://pay-with-pip.netlify.com
 image: /img/pip.svg
-demoImage: /img/pre-course/assessment.png
+demoImage: /img/pip.png
 platform: Web app
 color: rgb(99, 229, 187)
 next: projects/home-energy-app

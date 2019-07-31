@@ -35,7 +35,7 @@ export default class DemoiMac extends Component {
                 x="152.4"
                 y="51.1"
                 width="228.4"
-                height="205"
+                height="225"
                 transform="scale(1.2,1.1)"
                 xlinkHref={demoImage}
               />

@@ -17,7 +17,12 @@ export const AboutPageTemplate = ({
         <div className="content">
           <h1 className="has-text-weight-bold is-size-2">{title}</h1>
         </div>
-        {image && <PreviewCompatibleImage imageInfo={image} />}
+        {image && (
+          <PreviewCompatibleImage
+            imageInfo={image}
+            style={{ maxWidth: 820, marginBottom: 40 }}
+          />
+        )}
         <div className="columns">
           <div className="column">
             <PageContent className="content" content={content} />

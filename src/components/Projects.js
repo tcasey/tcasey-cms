@@ -1,20 +1,43 @@
 import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
-import ReactSVG from 'react-svg'
+import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const styles = {
+  container: {
+    padding: '3rem 1.5rem',
+  },
+  image: {
+    width: 240,
+    height: 215,
+    // marginBottom: 4,
+  },
   title: {
-    fontSize: 24,
+    fontWeight: 'bold',
+    fontSize: 16,
+    paddingRight: 8,
+    position: 'absolute',
+    paddingTop: 4
   },
-  role: {
-    fontSize: 14,
-    textTransform: 'uppercase',
-    marginBottom: 2,
-    fontWeight: 600,
-  },
-  year: {
+  date: {
     fontSize: 12,
-    fontWeight: 800,
+    color: '#02081A',
+    fontWeight: 'bold',
+  },
+  description: {
+    marginTop: 16,
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 2,
+  },
+  wrapper: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+    gridGap: 16,
+  },
+  block: {
+    padding: '2em 2em 2em 0',
   },
 }
 // className={css(styles.container)}
@@ -31,60 +54,27 @@ export default class ProjectGrid extends Component {
 
     return (
       <div className="projects">
-        {this.props.gridItems.map(item => (
-          <article style={smallStyle} key={item.path}>
-            <Link to={`/${item.path}`}>
-              <div
-                className={`content ${item.class}`}
-                style={{
-                  border: '1px solid #eaecee',
-                  padding: '2em 4em',
-                  margin: '2em 0 2em 0',
-                  position: 'relative',
-                }}
-              >
-                <div className="project-text">
-                  <span css={styles.role}>{item.role || 'All the Things'}</span>
-                  <span css={styles.title}>{item.title || 'project'}</span>
-                  <span css={styles.year}>
-                    Produced in {item.year || 'NaN'}.
-                  </span>
-                </div>
-                <div
-                  style={{
-                    height: '100px',
-                    width: '100%',
-                  }}
-                />
-                <div className="projects-image-container">
-                  {this.props.small ? null : (
-                    <svg
-                      className="icon-big-arrow-right"
-                      width="50px"
-                      height="20px"
-                      viewBox="0 0 29.3 5.8"
-                      enableBackground="new 0 0 29.3 5.8"
-                    >
-                      <path
-                        className="st0"
-                        fill="#fff"
-                        d="M25.8 0l-.6.8 1.9 1.6h-27.1v1h27.1l-1.9 1.6.6.8 3.5-2.9z"
-                      />
-                    </svg>
-                  )}
-                  <div>
-                    <ReactSVG
-                      path={item.image.publicURL}
-                      className="projects-svg"
-                      evalScript="always"
-                      style={{ height: 120, width: 180 }}
+        <div css={styles.wrapper}>
+          {this.props.gridItems.map(item => (
+            <Link to={`/${item.path}`} key={`${item.path}-${item.title}`}>
+              <div css={styles.block}>
+                <>
+                  {item.thumbnail && (
+                    <PreviewCompatibleImage
+                      style={styles.image}
+                      imageInfo={item.thumbnail}
                     />
-                  </div>
-                </div>
+                  )}
+                </>
+                <span css={styles.title}>{item.title}</span>
+                <br />
+                <span css={styles.date}>{item.year}</span>
+                <br />
+                <div css={styles.description}>{item.headline}</div>
               </div>
             </Link>
-          </article>
-        ))}
+          ))}
+        </div>
       </div>
     )
   }
@@ -110,9 +100,17 @@ export const query = graphql`
                 image {
                   publicURL
                 }
+                thumbnail {
+                  childImageSharp {
+                    fluid(maxWidth: 300, quality: 92) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
                 title
                 year
                 role
+                headline
                 path
                 class
                 color

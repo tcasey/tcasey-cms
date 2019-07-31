@@ -13,7 +13,7 @@ export const ProjectPageTemplate = ({
 }) => {
   return (
     <section className="section section--gradient">
-      <div className="container projects-container">
+      <div className="container">
         <div className="content">
           <h1 className="has-text-weight-bold is-size-2">{title}</h1>
         </div>
@@ -36,6 +36,7 @@ export default ({ data }) => {
     >
       <ProjectPageTemplate
         image={frontmatter.image}
+        thumbnail={frontmatter.thumbnail}
         title={frontmatter.title}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -66,9 +67,17 @@ export const projectPageQuery = graphql`
             image {
               publicURL
             }
+            thumbnail {
+              childImageSharp {
+                fluid(maxWidth: 300, quality: 92) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             title
             year
             role
+            headline
             path
             class
             color

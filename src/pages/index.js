@@ -89,7 +89,7 @@ class HomePage extends Component {
               {/* <p>{description}</p> */}
               <div className="flex-center">
                 <Link to="/projects" className="btn-gradient">
-                  More Projects
+                  <span>More Projects</span>
                 </Link>
               </div>
             </div>

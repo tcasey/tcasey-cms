@@ -5,7 +5,6 @@ import MediaQuery from 'react-responsive'
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
 
-import Menu from './Menu'
 import Logo from './Logo'
 
 const isActive = ({ isCurrent }) => {
@@ -86,9 +85,11 @@ export class NavbarTemplate extends Component {
                           )
                         } else {
                           return (
-                            <li className="nav-links">
+                            <li
+                              className="nav-links"
+                              key={`${linkURL}-${linkIcon}`}
+                            >
                               <a
-                                key={`${linkIcon}-${linkURL}`}
                                 href={linkURL}
                                 className={
                                   this.props.isCurrent
