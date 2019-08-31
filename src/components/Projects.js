@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, graphql } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import { Color } from '../constants'
 
 const styles = {
   container: {
@@ -16,11 +17,11 @@ const styles = {
     fontSize: 16,
     paddingRight: 8,
     position: 'absolute',
-    paddingTop: 4
+    paddingTop: 4,
   },
   date: {
     fontSize: 12,
-    color: '#02081A',
+    color: Color.BLACK,
     fontWeight: 'bold',
   },
   description: {
@@ -38,6 +39,14 @@ const styles = {
   },
   block: {
     padding: '2em 2em 2em 0',
+  },
+  overlay: {
+    width: 240,
+    height: 215,
+    backgroundColor: 'rgba(0, 0, 0, .035)',
+    position: 'absolute',
+    zIndex: 99,
+    borderRadius: 4,
   },
 }
 // className={css(styles.container)}
@@ -59,6 +68,7 @@ export default class ProjectGrid extends Component {
             <Link to={`/${item.path}`} key={`${item.path}-${item.title}`}>
               <div css={styles.block}>
                 <>
+                  <div css={styles.overlay} />
                   {item.thumbnail && (
                     <PreviewCompatibleImage
                       style={styles.image}
