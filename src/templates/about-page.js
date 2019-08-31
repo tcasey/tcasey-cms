@@ -20,7 +20,7 @@ export const AboutPageTemplate = ({
         {image && (
           <PreviewCompatibleImage
             imageInfo={image}
-            style={{ maxWidth: 820, marginBottom: 40 }}
+            style={{ maxWidth: 440, marginBottom: 40 }}
           />
         )}
         <div className="columns">
